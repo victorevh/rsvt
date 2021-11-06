@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.corpo{
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    background-color: antiquewhite;
+    /* flexbox */
+    display: -webkit-flex;
+    display: flex;
+
+    /* comportamento: em linha com wrap */
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    /* conteúdo justificado no centro */
+    -webkit-justify-content: center;
+    justify-content:center;
+
+
+}
+
+.navbar{
+    width: 100%;
+    max-height: 30%;
+    background-color: rgb(70, 28, 109);
+    position: fixed;
+    z-index: 100%;
+    top: 0;
+
+
+}
+
+.navbar nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.navbar ul{
+    max-width: 70%;
+    padding: 0%;
+    
+}
+
+.navbar ul li{
+    display: inline;
+    font-weight: bold;
+
+
+}
+
+.navbar ul li a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background .6s;
+    font-size: 20px;
+    
+
+}
+
+.navbar li {
+    border-right: solid 1px #fff;
+}
+
+.navbar li:last-child{
+    border: none;
+}
+
+.navbar ul li a:hover{
+   background-color: rgb(89, 38, 138);
+}
+
+.navbar a{
+    color: black;
+    font-size: 20px;
+}
+.boxes {
+    display: grid;
+    justify-items: center;
+    padding: 20px;  
+}
+.box {
+    padding: 10px;
+    max-width: 860px;
+    width: calc(100% - 20px);
+    border: 1px solid black;
+    margin: 40px 150px;
+    
+}
+
+.corpo ul{
+    list-style: none;
+    display: table-row;
+    align-items: center;
+}
+
+.corpo a {
+    color: black;
+
+}
+.corpo a:hover{
+    color: rgb(71, 71, 48);
+}
+.corpo li{
+    padding: 2.5px;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.categorias{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px; 
+    padding: 20px;
+ 
+}
+
+.reservatorios h1{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding-top: 100px;
+}
+
+.reservatorios h3{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.rodape{
+    width: 100%;
+    background-color: rgb(70, 28, 109); 
+}
+
+.rodape footer{
+    width: 70%;
+    margin: 0 15% 0 15%;
+}
+
+.rodape p, a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
