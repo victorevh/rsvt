@@ -14,7 +14,7 @@
     /* flexbox */
     display: -webkit-flex;
     display: flex;
-    background-color: antiquewhite;
+    background-image: linear-gradient(45deg,rgb(234, 229, 201) , rgb(108, 198, 203));
 
     /* comportamento: em linha com wrap */
     -webkit-flex-flow: row wrap;
@@ -96,7 +96,8 @@
     width: calc(100% - 20px);
     border: 1px solid black;
     margin: 40px 150px;
-    background-color: wheat;
+    background-color:  linear-gradient(90deg,rgb(234, 229, 201) , rgb(108, 198, 203));
+
 }
 
 .corpo ul{
@@ -141,7 +142,7 @@
 
 .table td{
     border: solid 1px black;
-    background-color: rgb(255, 255, 255);
+    ;
 }
 
 .rodape{
