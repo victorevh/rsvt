@@ -11,17 +11,18 @@
     width: 100%;
     height: 100%;
     font-size: 25px;
+    background-image: linear-gradient(45deg,rgb(234, 229, 201) , rgb(108, 198, 203));
+    background-size: 100%;
     /* flexbox */
     display: -webkit-flex;
     display: flex;
-    background-image: linear-gradient(45deg,rgb(234, 229, 201) , rgb(108, 198, 203));
-
+    
     /* comportamento: em linha com wrap */
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
 
     /* conteúdo justificado no centro */
-    -webkit-justify-content: center;
+
     justify-content:center;
 
 
@@ -46,7 +47,7 @@
 }
 
 .navbar ul{
-    max-width: 70%;
+    max-height: 30%;
     padding: 0%;
     
 }
@@ -85,11 +86,13 @@
     color: black;
     font-size: 20px;
 }
+
 .boxes {
     display: grid;
     justify-items: center;
     padding: 20px;  
 }
+
 .box {
     padding: 10px;
     max-width: 860px;
@@ -110,9 +113,11 @@
     color: black;
 
 }
+
 .corpo a:hover{
     color: rgb(71, 71, 48);
 }
+
 .corpo li{
     padding: 2.5px;
 }
