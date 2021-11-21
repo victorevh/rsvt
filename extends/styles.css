@@ -104,7 +104,6 @@
 }
 
 .corpo ul{
-    list-style: none;
     display: table-row;
     align-items: center;
 }
@@ -166,3 +165,40 @@
     text-decoration: none;
 }
 
+/* section styles */
+
+.infos{
+    max-width: 860px;
+    margin: 30px 15px 30px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.infos article {
+    width: 40%;
+    float: left;
+    border: black solid 1px;
+    padding: 20px;
+    margin: 15px;
+}
+  
+.infos h2{
+    text-align: center;
+    border: black solid 1px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.infos p {
+    margin: 5px 0;
+    text-align: start;
+}
+  
+.infos ul {
+    margin-top: 0;
+}
+  
+.infos li {
+    margin: 0px 35px;
+}
