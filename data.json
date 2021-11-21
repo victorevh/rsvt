@@ -4,35 +4,43 @@
     "hidreletricas" : [
         {
             "rsvtname" : "Furnas",
-            "nivelPercent" : 13.7
+            "nivelPercent" : 13.7,
+            "cidade" : "São Jose da Barra - MG"
         },
         {
             "rsvtname" : "Paraibuna",
-            "nivelPercent" : 17.3
+            "nivelPercent" : 17.3,
+            "cidade" : "Paraibuna - MG"
         },
         {
             "rsvtname" : "Ilha Solteira",
-            "nivelPercent" : 0
+            "nivelPercent" : 0,
+            "cidade" : "Selvira - MS"
         },
         {
             "rsvtname" : "Itumbiaria",
-            "nivelPercent" : 13.2
+            "nivelPercent" : 13.2,
+            "cidade" : "Araporã - MG"
         },
         {
             "rsvtname" : "Capivara",
-            "nivelPercent" : 36.4
+            "nivelPercent" : 36.4,
+            "cidade" : "Taciba - SP"
         },
         {
             "rsvtname" : "Três Marias",
-            "nivelPercent" : 33.7
+            "nivelPercent" : 33.7,
+            "cidade" : "São Gonçalo do Abaeté - MG"
         },
         {
             "rsvtname" : "Henry Borden",
-            "nivelPercent" : 37.2
+            "nivelPercent" : 37.2,
+            "cidade" : "Cubatão - SP"
         },
         {
             "rsvtname" : "Serra da Mesa",
-            "nivelPercent" : 23.1
+            "nivelPercent" : 23.1,
+            "cidade" : "Minaçu - GO"
         }
     ]
     
