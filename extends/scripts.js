@@ -61,7 +61,7 @@ function showRsvtInfo(jsonObj) {
 
         myH2.textContent = hidreletricas[i].rsvtname;
         myPara1.textContent = 'Volume útil: ' + hidreletricas[i].nivelPercent + '%';
-        myPara2.textContent = 'Localização: ' + hidreletricas[i].cidade;
+        myPara2.textContent = 'Localidade: ' + hidreletricas[i].cidade;
         myPara3.textContent = 'Reservatórios:';
 
         var reservatorios = hidreletricas[i].reservatorios;
