@@ -1,0 +1,39 @@
+{
+    "subsistema": "Sudeste / Centro-Oeste",
+    "EAR": "18,86%",
+    "hidreletricas" : [
+        {
+            "rsvtname" : "Furnas",
+            "nivelPercent" : 13.7
+        },
+        {
+            "rsvtname" : "Paraibuna",
+            "nivelPercent" : 17.3
+        },
+        {
+            "rsvtname" : "Ilha Solteira",
+            "nivelPercent" : 0
+        },
+        {
+            "rsvtname" : "Itumbiaria",
+            "nivelPercent" : 13.2
+        },
+        {
+            "rsvtname" : "Capivara",
+            "nivelPercent" : 36.4
+        },
+        {
+            "rsvtname" : "Três Marias",
+            "nivelPercent" : 33.7
+        },
+        {
+            "rsvtname" : "Henry Borden",
+            "nivelPercent" : 37.2
+        },
+        {
+            "rsvtname" : "Serra da Mesa",
+            "nivelPercent" : 23.1
+        }
+    ]
+    
+}
