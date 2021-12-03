@@ -85,59 +85,22 @@ function showRsvtInfo(jsonObj) {
 const header = document.querySelector('.subSist');
 const section = document.querySelector('.infos');
 
-var requestURL = 'https://raw.githubusercontent.com/victorevh/rsvt/main/data.json';
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
+const doGet = (url) => {
+    const promiseCallback = (resolve, reject) => {
+        fetch(url)
+            .then((response) => {
+                if(!response.ok) throw new Error('Erro ao executar requisição, status' + response.status);
+                console.log(response.ok)
+                return response.json();
+            })
 
-request.responseType = 'text';
-request.send();
-
-request.onload = function(){
-    var dataInfoText = request.response;
-    var dataInfo = JSON.parse(dataInfoText);
-    showSubsystem(dataInfo);
-    showRsvtInfo(dataInfo);
-}
-
-function showSubsystem(jsonObj) {
-    var myH1 = document.createElement('h1');
-    myH1.textContent = 'Hidréletricas do Subsistema ' + jsonObj['subsistema'];
-    header.appendChild(myH1);
-
-    var myPara = document.createElement('h3');
-    myPara.textContent = 'EAR: ' + jsonObj['EAR'] + ' (Energia Armazenada)';
-    header.appendChild(myPara);
-}
-
-function showRsvtInfo(jsonObj) {
-    var hidreletricas = jsonObj['hidreletricas'];
-
-    for (var i = 0; i < hidreletricas.length; i++) {
-        var myArticle = document.createElement('article');
-        var myH2 = document.createElement('h2');
-        var myPara1 = document.createElement('p');
-        var myPara2 = document.createElement('p');
-        var myPara3 = document.createElement('p');
-        var myList = document.createElement('ul');
-
-        myH2.textContent = hidreletricas[i].rsvtname;
-        myPara1.textContent = 'Volume útil: ' + hidreletricas[i].nivelPercent + '%';
-        myPara2.textContent = 'Localidade: ' + hidreletricas[i].cidade;
-        myPara3.textContent = 'Reservatórios:';
-
-        var reservatorios = hidreletricas[i].reservatorios;
-        for (var j = 0; j < reservatorios.length; j++) {
-            var listItem = document.createElement('li');
-            listItem.textContent = reservatorios[j];
-            myList.appendChild(listItem);
-        }
-
-        myArticle.appendChild(myH2);
-        myArticle.appendChild(myPara1);
-        myArticle.appendChild(myPara2);
-        myArticle.appendChild(myPara3);
-        myArticle.appendChild(myList);
-
-        section.appendChild(myArticle);
+            .then(resolve)
+            .catch(reject);
+        
     }
+    
+    return new Promise(promiseCallback);
 }
+
+doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(console.log).catch(console.error);
+
