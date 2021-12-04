@@ -1,4 +1,4 @@
-// Chart
+/* Chart
 var ctx = document.getElementsByClassName("line-chart");
 
 
@@ -15,7 +15,8 @@ var chartGraph = new Chart(ctx, {
             
         }]
     },
-});
+}); 
+*/
 
 
 
@@ -82,25 +83,61 @@ function showRsvtInfo(jsonObj) {
 }
 */
 
-const header = document.querySelector('.subSist');
-const section = document.querySelector('.infos');
+const listElement = document.getElementById("lista");
+const tableHead = document.getElementById("table-head");
 
 const doGet = (url) => {
     const promiseCallback = (resolve, reject) => {
         fetch(url)
             .then((response) => {
                 if(!response.ok) throw new Error('Erro ao executar requisição, status' + response.status);
-                console.log(response.ok)
                 return response.json();
-            })
+})
 
-            .then(resolve)
-            .catch(reject);
-        
-    }
-    
+        .then(resolve)
+        .catch(reject);
+}
     return new Promise(promiseCallback);
 }
 
-doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(console.log).catch(console.error);
+const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil" ];
 
+usefulData.forEach(dataName => {
+    const tableColumn = document.createElement("td");
+    tableColumn.innerHTML = dataName;
+    tableHead.appendChild(tableColumn);
+});
+
+const iterateResult = (item) => {
+    const tableRow = document.createElement("tr");
+
+usefulData.forEach(dataName => {
+    const element = document.createElement("td");
+    element.innerHTML = item[dataName];
+    tableRow.appendChild(element);
+});
+
+listElement.appendChild(tableRow);
+}
+
+const getSubSystems = result => {
+    const subSystems = [];
+        result.forEach(item => {
+            const sub = item.Subsistema;
+                if (!subSystems.includes(sub))
+                subSystems.push(sub);
+})
+
+    return subSystems;
+};
+
+doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
+result.forEach(iterateResult)
+    console.log(result[0]);
+
+    const subSistemas = getSubSystems(result).map(subSystem =>
+    result.filter(item => item.Subsistema == subSystem)
+)
+
+    console.log(subSistemas);
+}).catch(console.error);
