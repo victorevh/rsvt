@@ -102,6 +102,7 @@ const doGet = (url) => {
 
 const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil" ];
 
+
 usefulData.forEach(dataName => {
     const tableColumn = document.createElement("td");
     tableColumn.innerHTML = dataName;
@@ -140,4 +141,16 @@ result.forEach(iterateResult)
 )
 
     console.log(subSistemas);
+
+    const subSistNorte = subSistemas[0]
+    const subSistNordeste = subSistemas[1]
+    const subSistSul = subSistemas[2]
+    const subSistSudeste = subSistemas[3]
+    
+    console.log(subSistNorte)
+    console.log(subSistNordeste)
+    console.log(subSistSul)
+    console.log(subSistSudeste)
+    
+    
 }).catch(console.error);
