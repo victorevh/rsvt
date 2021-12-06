@@ -138,19 +138,96 @@ result.forEach(iterateResult)
 
     const subSistemas = getSubSystems(result).map(subSystem =>
     result.filter(item => item.Subsistema == subSystem)
-)
 
-    console.log(subSistemas);
+)
 
     const subSistNorte = subSistemas[0]
     const subSistNordeste = subSistemas[1]
     const subSistSul = subSistemas[2]
     const subSistSudeste = subSistemas[3]
     
-    console.log(subSistNorte)
-    console.log(subSistNordeste)
-    console.log(subSistSul)
-    console.log(subSistSudeste)
     
-    
-}).catch(console.error);
+    const groupedBySub = {};
+
+    // Percorre o array dos reservatórios
+    subSistNorte.forEach(reservatorioNorte => {
+        // Pega o valor do subsistema
+        const norte = reservatorioNorte.Subsistema;
+        // Se não existir uma chave em groupedBySub com o valor "X"
+        if(!groupedBySub[norte]) {
+            // Criamos e inicamos ela com um array vazio
+            groupedBySub[norte] = [];
+        }
+
+        // Agora garantimos que essa chave existe e que o valor é um array
+        // Agora basta adicionar esse reservatório ao array
+        // o método .push apenas adiciona um novo valor a um array
+        groupedBySub[norte].push(reservatorioNorte);
+
+        console.log(norte);
+
+        const listElementNorte = document.getElementById("listaNorte");
+        const tableHeadNorte = document.getElementById("table-head-norte");
+
+
+        subSistNorte.forEach(dataName => {
+            const tableColumn = document.createElement("td");
+            tableColumn.innerHTML = dataName;
+            tableHeadNorte.appendChild(tableColumn);
+        })
+
+        const resultNorte = (item) => {
+            const tableRow = document.createElement("tr");
+        
+        subSistNorte.forEach(dataName => {
+            const element = document.createElement("td");
+            element.innerHTML = item[dataName];
+            tableRow.appendChild(element);
+        });
+        listElementNorte.appendChild(tableRow)
+        }
+
+        doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
+        result.forEach(resultNorte)});
+    });
+
+    subSistNordeste.forEach(reservatorio => {
+        const nordeste = reservatorio.Subsistema;
+        if(!groupedBySub[nordeste]) {
+            groupedBySub[nordeste] = [];
+        }
+
+        groupedBySub[nordeste].push(reservatorio);
+
+        console.log(nordeste)
+        
+    });
+
+    subSistSul.forEach(reservatorio => {
+        const sulsubSistSul = reservatorio.Subsistema;
+        if(!groupedBySub[sulsubSistSul]) {
+            groupedBySub[sulsubSistSul] = [];
+        }
+
+        groupedBySub[sulsubSistSul].push(reservatorio);
+
+        console.log(sulsubSistSul)
+    });
+
+    subSistSudeste.forEach(reservatorio => {
+        const subSistSudeste = reservatorio.Subsistema;
+        if(!groupedBySub[subSistSudeste]) {
+            groupedBySub[subSistSudeste] = [];
+        }
+
+        groupedBySub[subSistSudeste].push(reservatorio);
+
+        console.log(subSistSudeste)
+    });
+
+
+
+
+})
+
+.catch(console.error);
