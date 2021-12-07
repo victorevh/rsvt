@@ -100,7 +100,7 @@ const doGet = (url) => {
     return new Promise(promiseCallback);
 }
 
-const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil" ];
+const usefulData = [ "Subsistema", "Reservatorio", "ReservatorioValorUtil"];
 
 
 usefulData.forEach(dataName => {
@@ -134,7 +134,7 @@ const getSubSystems = result => {
 
 doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
 result.forEach(iterateResult)
-    console.log(result[0]);
+//    console.log(result[0]);
 
     const subSistemas = getSubSystems(result).map(subSystem =>
     result.filter(item => item.Subsistema == subSystem)
@@ -165,64 +165,49 @@ result.forEach(iterateResult)
         groupedBySub[norte].push(reservatorioNorte);
 
         console.log(norte);
+        console.log(reservatorioNorte);
 
         const listElementNorte = document.getElementById("listaNorte");
         const tableHeadNorte = document.getElementById("table-head-norte");
 
-
-        subSistNorte.forEach(dataName => {
-            const tableColumn = document.createElement("td");
-            tableColumn.innerHTML = dataName;
-            tableHeadNorte.appendChild(tableColumn);
-        })
-
-        const resultNorte = (item) => {
-            const tableRow = document.createElement("tr");
-        
-        subSistNorte.forEach(dataName => {
-            const element = document.createElement("td");
-            element.innerHTML = item[dataName];
-            tableRow.appendChild(element);
-        });
-        listElementNorte.appendChild(tableRow)
-        }
-
-        doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
-        result.forEach(resultNorte)});
     });
 
-    subSistNordeste.forEach(reservatorio => {
-        const nordeste = reservatorio.Subsistema;
+    subSistNordeste.forEach(reservatorioNordeste => {
+        const nordeste = reservatorioNordeste.Subsistema;
         if(!groupedBySub[nordeste]) {
             groupedBySub[nordeste] = [];
         }
 
-        groupedBySub[nordeste].push(reservatorio);
-
-        console.log(nordeste)
+        groupedBySub[nordeste].push(reservatorioNordeste);
+        
+        console.log(nordeste);
+        console.log(reservatorioNordeste);
         
     });
 
-    subSistSul.forEach(reservatorio => {
-        const sulsubSistSul = reservatorio.Subsistema;
-        if(!groupedBySub[sulsubSistSul]) {
-            groupedBySub[sulsubSistSul] = [];
+    subSistSul.forEach(reservatorioSul => {
+        const sul = reservatorioSul.Subsistema;
+        if(!groupedBySub[sul]) {
+            groupedBySub[sul] = [];
         }
 
-        groupedBySub[sulsubSistSul].push(reservatorio);
+        groupedBySub[sul].push(reservatorioSul);
 
-        console.log(sulsubSistSul)
+        console.log(sul);
+        console.log(reservatorioSul);
     });
 
-    subSistSudeste.forEach(reservatorio => {
-        const subSistSudeste = reservatorio.Subsistema;
-        if(!groupedBySub[subSistSudeste]) {
-            groupedBySub[subSistSudeste] = [];
+    subSistSudeste.forEach(reservatorioSudeste => {
+        const sudeste = reservatorioSudeste.Subsistema;
+        if(!groupedBySub[sudeste]) {
+            groupedBySub[sudeste] = [];
         }
 
-        groupedBySub[subSistSudeste].push(reservatorio);
+        groupedBySub[sudeste].push(reservatorioSudeste);
 
-        console.log(subSistSudeste)
+        console.log(sudeste);
+        console.log(reservatorioSudeste);
+        
     });
 
 
