@@ -7,11 +7,14 @@
 }
 
 .corpo{
-    width: 100%;
-    height: 100%;
-    font-size: 25px;
-    background-size: 100%;
-    background-color: ivory;
+    min-height: 100vh;
+
+    background: #56CCF2;
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
+
+
+
     /* flexbox */
     display: -webkit-flex;
     display: flex;
@@ -60,11 +63,11 @@
 
 .navbar ul li a {
     color: #fff;
-    padding: 10px;
+    padding: 2vh;
     text-decoration: none;
     display: inline-block;
     transition: background .6s;
-    font-size: 20px;
+    font-size: 2vh;
     
 
 }
@@ -84,20 +87,6 @@
 .navbar a{
     color: black;
     font-size: 20px;
-}
-
-.boxes {
-    display: grid;
-    justify-items: center;
-    padding: 20px;  
-}
-
-.box {
-    padding: 10px;
-    max-width: 860px;
-    width: calc(100% - 20px);
-    border: 1px solid black;
-    margin: 40px 150px;
 }
 
 
@@ -120,7 +109,7 @@
 }
 
 .reservatorios {
-    border: 1px solid black;
+    width: 1000px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -131,7 +120,7 @@
     display: flex;
     justify-content: center;
     margin: 20px;
-    padding-top: 100px;
+    padding: 50px;
 }
 
 .reservatorios h3{
@@ -141,8 +130,9 @@
 }
 
 .table{
-    width: 100%;
+    width: 80%;
     text-align: center;
+
     
 }
 
@@ -244,4 +234,31 @@
   
 .infos li {
     margin: 0px 35px;
+}
+
+.divBlock {
+    display: none;
+}
+
+.showInfo {
+    min-width: 40px;    
+    background-color: white;
+    color: black;
+    border-radius: 10%;
+}
+
+.showInfo img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.groupItem {
+    border-radius: 15px;
+    margin: 15px;
+    background: -webkit-linear-gradient(to right, #1271ec, #0db0e7);
+    background: linear-gradient(to right, #1271ec, #0db0e7);
+}
+
+.groupItem h1 {
+    color: white;
 }
