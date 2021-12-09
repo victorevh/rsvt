@@ -1,3 +1,4 @@
+
 const listElementNorte = document.getElementById("listaNorte");
 const tableHeadNorte = document.getElementById("table-head-norte");
 
@@ -141,6 +142,12 @@ const filterBaseBySubsystem = (database, subsystemName) => {
     return databaseBySubsystem;
 }
 
+const filterBaseByData = (database, dataInfo) => {
+    let dataInfoAtt = database.filter(item => {
+        return item.Data === dataInfo
+    });
+}
+
 doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
     // Rederizado resultado geral no HMTL
     // result.forEach(iterateResult)
@@ -149,6 +156,7 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
     const nordesteDatabase = filterBaseBySubsystem(result, "Nordeste");
     const sulDatabase = filterBaseBySubsystem(result, "Sul");
     const sudesteDatabase = filterBaseBySubsystem(result, "Sudeste / Centro-Oeste");
+    const dataInfoBase = filterBaseByData(result, "Data")
 
     norteDatabase.forEach(iterateResultNorte);
     nordesteDatabase.forEach(iterateResultNordeste);
@@ -163,3 +171,11 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
 })
 
 .catch(console.error);
+
+function Mudarestado(el) {
+    var display = document.getElementById(el).style.display;
+    if(display == "block")
+        document.getElementById(el).style.display = 'none';
+    else
+        document.getElementById(el).style.display = 'block';
+}
