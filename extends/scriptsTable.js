@@ -30,16 +30,6 @@ const doGet = (url) => {
 
 const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil"];
 
-const itemData = ["Data"];
-
-// DATA
-
-itemData.forEach(atData => {
-    const itemH1 = document.createElement("h1");
-    itemH1.innerHTML = atData;
-    listData.appendChild(itemH1);
-});
-
 
 // TABELA NORTE
 
