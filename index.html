@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Nível de Reservatórios</title>
     <link rel="stylesheet" href="./extends/styles.css">
     <link rel="shortcut icon" href="./assets/favico/favicon-32x32.png">
 </head>
 <body>
    
-    <div class="navbar">
-        <nav>
-            <ul>
+    <header>
+        <nav class="menu">
+            <a class="logo" href="/"><img src="./assets/favico/favicon-32x32.png" alt=""></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
                 <li><a href="#sudeste/centro-oeste">Reservatórios Sudeste / Centro-Oeste</a></li>
                 <li><a href="#sul">Reservatórios Sul</a></li>
                 <li><a href="#nordeste">Reservatórios Nordeste</a></li>
-                <li><a href="#norte">Reservatórios Norte</a></li>
+                <li><a href="#norte">Reservatórios Norte</a></li> 
             </ul>
         </nav>
-    </div>
+    </header>
 
     <div class = "corpo">
         <section class="reservatorios">
@@ -28,7 +34,7 @@
                 <h1>Última atualização dos dados: 04/11/2021</h1>
             </div>
             
-            <div class="data"></div>
+            <div class="listData"></div>
             
             <div class="groupItem">
                 
@@ -99,8 +105,8 @@
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-    <script type="text/javascript" src="./extends/scripts.js"></script>
+    <script type="text/javascript" src="./extends/interateScript.js"></script>
+    <script type="text/javascript" src="./extends/scriptsTable.js"></script>
 
 
 </body>
