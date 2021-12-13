@@ -28,7 +28,7 @@ const doGet = (url) => {
 }
 
 
-const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil"];
+const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil", "ReservatorioPorcentagem"];
 
 
 // TABELA NORTE
