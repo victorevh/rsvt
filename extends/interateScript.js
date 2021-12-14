@@ -52,3 +52,38 @@ function Mudarestado(el) {
     else
         document.getElementById(el).style.display = 'block';
 }
+
+// Scroll
+
+// identifica click no menu
+const menuItems = document.querySelectorAll('.nav-list a[href^="#"]');
+
+// Verifica o item que foi clicado
+menuItems.forEach(item => {
+    item.addEventListener('click', scrollToIdOnClick);
+})
+
+// faz referência entre o HREF e item
+function gerScrollTopByHref(element){
+    const id = element.getAttribute('href');
+    return document.querySelector(id).offsetTop;
+    
+}
+
+// Trata o clique prevenindo o evento padrão do HTML e define a distancia do alvo
+function scrollToIdOnClick(event) {
+    event.preventDefault();
+    const to = gerScrollTopByHref(event.target) - 25;
+
+    scrollToPosition(to);
+
+}
+
+// Scroll Suave
+function scrollToPosition(to) {
+    window.scroll({
+        top: to,
+        behavior: "smooth",
+    })
+}
+
