@@ -30,12 +30,20 @@ const doGet = (url) => {
 
 const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil", "ReservatorioPorcentagem"];
 
+const dataDictionary = {
+    "Bacia": "Bacia",
+    "Reservatorio": "Reservatórios",
+    "ReservatorioValorUtil": "Valor Útil %",
+    "ReservatorioPorcentagem": "Porcentagem",
+}
+
+console.log(usefulData)
 
 // TABELA NORTE
 
 usefulData.forEach(dataName => {
     const tableColumn = document.createElement("td");
-    tableColumn.innerHTML = dataName;
+    tableColumn.innerHTML = dataDictionary[dataName];
     tableHeadNorte.appendChild(tableColumn);
 });
 
@@ -55,7 +63,7 @@ const iterateResultNorte = (item) => {
 
 usefulData.forEach(dataName => {
     const tableColumn = document.createElement("td");
-    tableColumn.innerHTML = dataName;
+    tableColumn.innerHTML = dataDictionary[dataName];
     tableHeadNordeste.appendChild(tableColumn);
 });
 
@@ -76,7 +84,7 @@ const iterateResultNordeste = (item) => {
 
 usefulData.forEach(dataName => {
     const tableColumn = document.createElement("td");
-    tableColumn.innerHTML = dataName;
+    tableColumn.innerHTML = dataDictionary[dataName];
     tableHeadSul.appendChild(tableColumn);
 });
 
@@ -97,7 +105,7 @@ const iterateResultSul = (item) => {
 
 usefulData.forEach(dataName => {
     const tableColumn = document.createElement("td");
-    tableColumn.innerHTML = dataName;
+    tableColumn.innerHTML = dataDictionary[dataName];
     tableHeadSudeste.appendChild(tableColumn);
 });
 
