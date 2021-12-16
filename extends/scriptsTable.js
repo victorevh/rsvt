@@ -31,10 +31,10 @@ const doGet = (url) => {
 const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil", "ReservatorioPorcentagem"];
 
 const dataDictionary = {
-    "Bacia": "Bacia",
-    "Reservatorio": "Reservatórios",
-    "ReservatorioValorUtil": "Valor Útil %",
-    "ReservatorioPorcentagem": "Porcentagem",
+    "Bacia": "Principais Bacias",
+    "Reservatorio": "Principais Reservatórios",
+    "ReservatorioValorUtil": "Valor Útil Atual %",
+    "ReservatorioPorcentagem": "% do Subsistema",
 }
 
 console.log(usefulData)
