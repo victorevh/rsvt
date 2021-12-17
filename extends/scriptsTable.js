@@ -28,13 +28,13 @@ const doGet = (url) => {
 }
 
 
-const usefulData = [ "Bacia", "Reservatorio", "ReservatorioValorUtil", "ReservatorioPorcentagem"];
+const usefulData = [ "Bacia", "Reservatorio", "ReservatorioPorcentagem", "ReservatorioValorUtil"];
 
 const dataDictionary = {
     "Bacia": "Principais Bacias",
     "Reservatorio": "Principais Reservatórios",
-    "ReservatorioValorUtil": "Valor Útil Atual %",
     "ReservatorioPorcentagem": "% do Subsistema",
+    "ReservatorioValorUtil": "Valor Útil Atual em %",
 }
 
 console.log(usefulData)
