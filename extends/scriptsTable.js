@@ -164,7 +164,6 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
     const nordesteDatabase = filterBaseBySubsystem(result, "Nordeste");
     const sulDatabase = filterBaseBySubsystem(result, "Sul");
     const sudesteDatabase = filterBaseBySubsystem(result, "Sudeste / Centro-Oeste");
-    const dataInfoBase = filterBaseByData(result, "Data")
 
     norteDatabase.forEach(iterateResultNorte);
     nordesteDatabase.forEach(iterateResultNordeste);
