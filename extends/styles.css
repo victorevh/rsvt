@@ -227,31 +227,11 @@ body {
 
 @media (max-width: 380px) {
 
-    .title h1{
-        
-        color: white;
-    }
-    
-    .reservatorios h1 {
-        text-align: center;
-        font-size: 16px;
-    }
-
         
     .groupItem{
         min-width: 330px;
     }
-    
-    .subSist {
-        font-size: 10px;
-    }
 
-
-    .infos article{
-        
-        margin: 15px;
-        
-    }
 
       /* Responsive Table */
     
@@ -260,63 +240,10 @@ body {
         max-width: 45vh;
     }
 
-    .table thead,
-    .table tbody,
-    .table th,
-    .table td,
-    .table tr {
-        display: block;
-    }
-    .table td,
-    .table th {
-        height: 35px;
-    }
-
-    .table thead {
-        float: left;
-    }
-
-    .table tbody {
-        width: auto;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-    }
-
-    .table tbody tr {
-        display: inline-block;
-    }
-
-    
-    .table td:last-child {
-        border-right: #999999 solid 1px;
-    }
-
 }
 
 @media (max-height: 700px) {
 
-    
-    .reservatorios h1 {
-        text-align: center;
-        font-size: 16px;
-    }
-
-        
-    .groupItem{
-        min-width: 330px;
-    }
-    
-    .subSist {
-        font-size: 10px;
-    }
-
-
-    .infos article{
-        
-        margin: 15px;
-        
-    }
 
       /* Responsive Table */
     
@@ -325,37 +252,6 @@ body {
         max-width: 52vh;
     }
 
-    .table thead,
-    .table tbody,
-    .table th,
-    .table td,
-    .table tr {
-        display: block;
-    }
-    .table td,
-    .table th {
-        height: 35px;
-    }
-
-    .table thead {
-        float: left;
-    }
-
-    .table tbody {
-        width: auto;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-    }
-
-    .table tbody tr {
-        display: inline-block;
-    }
-
-    
-    .table td:last-child {
-        border-right: #999999 solid 1px;
-    }
 
 }
 
