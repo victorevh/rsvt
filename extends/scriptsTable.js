@@ -37,7 +37,6 @@ const dataDictionary = {
     "ReservatorioValorUtil": "Valor Útil Atual em %",
 }
 
-console.log(usefulData)
 
 // TABELA NORTE
 
