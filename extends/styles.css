@@ -249,7 +249,7 @@ body {
     
     .table {
         display: block;
-        max-width: 52vh;
+        min-width: 52vh;
     }
 
 
