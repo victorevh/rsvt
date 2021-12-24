@@ -11,7 +11,6 @@ const tableHeadSul = document.getElementById("table-head-sul");
 const listElementSudeste = document.getElementById("listaSudeste");
 const tableHeadSudeste = document.getElementById("table-head-sudeste");
 
-const listData = document.getElementById("data");
 
 const doGet = (url) => {
     const promiseCallback = (resolve, reject) => {
