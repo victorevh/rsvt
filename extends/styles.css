@@ -154,8 +154,6 @@ body {
 
 /* section styles */
 
-
-
 @media (max-width: 500px) {
 
     .title h1{
@@ -226,8 +224,7 @@ body {
 }
 
 @media (max-width: 380px) {
-
-        
+     
     .groupItem{
         min-width: 330px;
     }
@@ -244,14 +241,12 @@ body {
 
 @media (max-height: 700px) {
 
-
       /* Responsive Table */
     
     .table {
         display: block;
         min-width: 52vh;
     }
-
 
 }
 
@@ -353,8 +348,6 @@ th, tr:hover{
     flex-wrap: wrap;
     justify-content: center;
 }
-
-
 
 .infos article {
     width: 360px;
