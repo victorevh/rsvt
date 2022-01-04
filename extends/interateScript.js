@@ -47,10 +47,21 @@ mobileNavbar.init()
 
 function Mudarestado(el) {
     var display = document.getElementById(el).style.display;
+    
     if(display == "block")
         document.getElementById(el).style.display = 'none';
     else
         document.getElementById(el).style.display = 'block';
+        
+}
+
+function Mudaricon(icon) {
+    var displayico = document.getElementById(icon).style.translate;
+    var img = window.document.getElementById('bttn');
+    if(displayico == "rotate(180deg)")
+        img.style.transform = 'rotate(0deg)'
+    else
+        img.style.transform = 'rotate(180deg)'
 }
 
 // Scroll
