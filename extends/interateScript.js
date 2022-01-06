@@ -56,9 +56,9 @@ function Mudarestado(el) {
 }
 
 function Mudaricon(icon) {
-    var displayico = document.getElementById(icon).style.translate;
+    var display = document.getElementById(icon).style.display;
     var img = window.document.getElementById('bttn');
-    if(displayico == "rotate(180deg)")
+    if(display == "block")
         img.style.transform = 'rotate(0deg)'
     else
         img.style.transform = 'rotate(180deg)'
