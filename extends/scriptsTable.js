@@ -99,6 +99,7 @@ const iterateResultSul = (item) => {
         
 }
 
+
 // TABELA SUDESTE / CENTRO- OESTE
 
 usefulData.forEach(dataName => {

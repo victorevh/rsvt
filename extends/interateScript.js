@@ -57,13 +57,27 @@ function Mudarestado(el) {
 
 function Mudaricon(icon) {
     var display = document.getElementById(icon).style.display;
-    var img = window.document.getElementById('bttn');
-    if(display == "block")
+    var img = document.getElementById('bttn');
+    var img1 = document.getElementById('bttn1');
+    if(display == "block"){
         img.style.transform = 'rotate(0deg)'
-    else
+        img1.style.transform = 'rotate(0deg)'
+    }else{
         img.style.transform = 'rotate(180deg)'
+        img1.style.transform = 'rotate(180deg)'
+    }
 }
-
+/*
+function Mudaricon(){
+    var pontos = document.getElementById("minhaDiv3")
+    var img = document.getElementById("bttn");
+    if(pontos.style.display === "block"){
+        img.style.transform = "rotate(0deg)"
+    }else{
+        img.style.transform = "rotate(180deg)"
+    }
+}
+*/
 
 // Scroll
 
