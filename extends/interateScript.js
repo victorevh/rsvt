@@ -47,15 +47,18 @@ mobileNavbar.init()
 
 function Mudarestado(el) {
     var display = document.getElementById(el).style.display;
+    var img = document.getElementById('bttn');
     
-    if(display == "block")
-        document.getElementById(el).style.display = 'none';
-    else
-        document.getElementById(el).style.display = 'block';
-        
+    if(display == "block"){
+        document.getElementById(el).style.display = 'none'
+        img.style.transform = 'rotate(0deg)'
+    }else{
+        document.getElementById(el).style.display = 'block'
+        img.style.transform = 'rotate(180deg)'
+    }    
 }
 
-function Mudaricon(icon) {
+/*function Mudaricon(icon) {
     var display = document.getElementById(icon).style.display;
     var img = document.getElementById('bttn');
     var img1 = document.getElementById('bttn1');
@@ -65,17 +68,17 @@ function Mudaricon(icon) {
         img.style.transform = 'rotate(180deg)'
     }
 }
-/*
+
 function Mudaricon(){
     var pontos = document.getElementById("minhaDiv3")
     var img = document.getElementById("bttn");
     if(pontos.style.display === "block"){
-        img.style.transform = "rotate(0deg)"
-    }else{
         img.style.transform = "rotate(180deg)"
+    }else{
+        img.style.transform = "rotate(0deg)"
     }
-}
-*/
+}*/
+
 
 // Scroll
 
