@@ -61,10 +61,8 @@ function Mudaricon(icon) {
     var img1 = document.getElementById('bttn1');
     if(display == "block"){
         img.style.transform = 'rotate(0deg)'
-        img1.style.transform = 'rotate(0deg)'
     }else{
         img.style.transform = 'rotate(180deg)'
-        img1.style.transform = 'rotate(180deg)'
     }
 }
 /*
