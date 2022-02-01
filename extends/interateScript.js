@@ -69,6 +69,7 @@ function Mudarestado(el) {
     }
 }
 
+
 function Mudaricon(){
     var pontos = document.getElementById("minhaDiv3")
     var img = document.getElementById("bttn");
