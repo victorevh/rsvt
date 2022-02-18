@@ -381,6 +381,10 @@ th, tr:hover{
     display: none;
 }
 
+.buttonRotate {
+    transform: rotate(0deg);
+}
+
 .showInfo {
     min-width: 40px;    
     background-color: white;
@@ -417,4 +421,8 @@ th, tr:hover{
 .item {
     display: flex;
     justify-content: center;
+}
+
+.girar {
+    transform: rotate(180deg);
 }

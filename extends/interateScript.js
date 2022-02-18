@@ -47,39 +47,48 @@ mobileNavbar.init()
 
 function Mudarestado(el) {
     var display = document.getElementById(el).style.display;
-    var img = document.getElementById('bttn');
     
     if(display == "block"){
         document.getElementById(el).style.display = 'none'
-        img.style.transform = 'rotate(0deg)'
     }else{
         document.getElementById(el).style.display = 'block'
-        img.style.transform = 'rotate(180deg)'
     }    
 }
 
-/*function Mudaricon(icon) {
-    var display = document.getElementById(icon).style.display;
-    var img = document.getElementById('bttn');
-    var img1 = document.getElementById('bttn1');
-    if(display == "block"){
-        img.style.transform = 'rotate(0deg)'
-    }else{
-        img.style.transform = 'rotate(180deg)'
+function icon(el){
+    var invert = document.getElementById(el).style.transform;
+    invert.style.transform = "rotate(180deg)"
+
+    if(transform == "rotate(0deg)"){
+        document.getElementById(el).style.transform = 'rotate(180deg)'
     }
 }
+
+
+/*
+function modifyIcon() {
+    var invert = document.getElementById("bttn");
+    invert.style.transform = "rotate(180deg)"
+    
+    function Mudaricon(){
+        invert.addEventListener("click", modifyIcon, true);
+        
+    }
+}
+
 
 
 function Mudaricon(){
     var pontos = document.getElementById("minhaDiv3")
-    var img = document.getElementById("bttn");
+    var img = document.getElementsByTagName("button");
     if(pontos.style.display === "block"){
-        img.style.transform = "rotate(180deg)"
-    }else{
         img.style.transform = "rotate(0deg)"
+    }else{
+        img.style.transform = "rotate(180deg)"
+        img2.style.transform = "rotate(180deg)"
     }
+    
 }*/
-
 
 // Scroll
 
