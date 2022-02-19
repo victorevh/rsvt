@@ -76,8 +76,6 @@ function modifyIcon() {
     }
 }
 
-
-
 function Mudaricon(){
     var pontos = document.getElementById("minhaDiv3")
     var img = document.getElementsByTagName("button");
