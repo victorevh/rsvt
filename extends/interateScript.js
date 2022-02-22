@@ -55,37 +55,45 @@ function Mudarestado(el) {
     }    
 }
 
-function icon(el){
-    var invert = document.getElementById(el).style.transform;
-    invert.style.transform = "rotate(180deg)"
+// ROTAÇÃO DO BOTÃO
 
-    if(transform == "rotate(0deg)"){
-        document.getElementById(el).style.transform = 'rotate(180deg)'
-    }
-}
+rotate = 0; // Variável com rotação 0.
 
-/*
-function modifyIcon() {
-    var invert = document.getElementById("bttn");
-    invert.style.transform = "rotate(180deg)"
-    
-    function Mudaricon(){
-        invert.addEventListener("click", modifyIcon, true);
-        
-    }
-}
+document.addEventListener("DOMContentLoaded",function(){// Usando eventListener, e quando a página for carregada
 
-function Mudaricon(){
-    var pontos = document.getElementById("minhaDiv3")
-    var img = document.getElementsByTagName("button");
-    if(pontos.style.display === "block"){
-        img.style.transform = "rotate(0deg)"
-    }else{
-        img.style.transform = "rotate(180deg)"
-        img2.style.transform = "rotate(180deg)"
-    }
-    
-}*/
+    document.getElementById("bttn3").addEventListener("click",function(){// Quando houver um click no botão
+
+        if(rotate === 360){rotate = 0} //Verificamos se o valor da variável rotate é 360, caso seja zeramos o valor
+
+        rotate = rotate + 180; // increvemento de 180deg
+
+        document.getElementById("img3").style.transform = "rotate("+rotate+"deg)"; // acessando o elemento e atribuindo o rotate com o valor da variavel
+    });
+
+    document.getElementById("bttn2").addEventListener("click",function(){
+        if(rotate === 360){rotate = 0}
+
+        rotate = rotate + 180;
+
+        document.getElementById("img2").style.transform = "rotate("+rotate+"deg)";
+    })
+
+    document.getElementById("bttn1").addEventListener("click",function(){
+        if(rotate === 360){rotate = 0}
+
+        rotate = rotate + 180;
+
+        document.getElementById("img1").style.transform = "rotate("+rotate+"deg)";
+    })
+
+    document.getElementById("bttn").addEventListener("click",function(){
+        if(rotate === 360){rotate = 0}
+
+        rotate = rotate + 180;
+
+        document.getElementById("img").style.transform = "rotate("+rotate+"deg)";
+    })
+})
 
 // Scroll
 
