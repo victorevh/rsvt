@@ -64,7 +64,6 @@ function icon(el){
     }
 }
 
-
 /*
 function modifyIcon() {
     var invert = document.getElementById("bttn");
