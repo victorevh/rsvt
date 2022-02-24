@@ -58,42 +58,69 @@ function Mudarestado(el) {
 
 // ROTAÇÃO DO BOTÃO
 
-rotate = 0; // Variável com rotação 0.
 
-document.addEventListener("DOMContentLoaded",function(){// Usando eventListener, e quando a página for carregada
+document.addEventListener("DOMContentLoaded",function(){
+    
+    document.getElementById("bttn3").addEventListener("click",function(){
 
-    document.getElementById("bttn3").addEventListener("click",function(){// Quando houver um click no botão
-
-        if(rotate == 360){rotate = 0} //Verificamos se o valor da variável rotate é 360, caso seja zeramos o valor
-
-        rotate = rotate + 180; // increvemento de 180deg
-
-        document.getElementById("img3").style.transform = "rotate("+rotate+"deg)"; // acessando o elemento e atribuindo o rotate com o valor da variavel
-    });
+        var img = document.getElementById("img3");
+        
+        if(img.style.transform == "scale(-1)") {
+            
+            img.style.transform = 'scale(1)'
+       
+        }else{
+            
+            img.style.transform = 'scale(-1)'
+       
+        }
+    })
 
     document.getElementById("bttn2").addEventListener("click",function(){
-        if(rotate == 360){rotate = 0}
 
-        rotate = rotate + 180;
-
-        document.getElementById("img2").style.transform = "rotate("+rotate+"deg)";
+        var img = document.getElementById("img2");
+        
+        if(img.style.transform == "scale(-1)") {
+            
+            img.style.transform = 'scale(1)'
+       
+        }else{
+            
+            img.style.transform = 'scale(-1)'
+       
+        }
     })
 
     document.getElementById("bttn1").addEventListener("click",function(){
-        if(rotate == 360){rotate = 0}
 
-        rotate = rotate + 180;
-
-        document.getElementById("img1").style.transform = "rotate("+rotate+"deg)";
+        var img = document.getElementById("img1");
+        
+        if(img.style.transform == "scale(-1)") {
+            
+            img.style.transform = 'scale(1)'
+       
+        }else{
+            
+            img.style.transform = 'scale(-1)'
+       
+        }
     })
 
     document.getElementById("bttn").addEventListener("click",function(){
-        if(rotate == 360){rotate = 0}
 
-        rotate = rotate + 180;
-
-        document.getElementById("img").style.transform = "rotate("+rotate+"deg)";
+        var img = document.getElementById("img");
+        
+        if(img.style.transform == "scale(-1)") {
+            
+            img.style.transform = 'scale(1)'
+       
+        }else{
+            
+            img.style.transform = 'scale(-1)'
+       
+        }
     })
+    
 })
 
 // Scroll
