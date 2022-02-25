@@ -11,7 +11,6 @@ const tableHeadSul = document.getElementById("table-head-sul");
 const listElementSudeste = document.getElementById("listaSudeste");
 const tableHeadSudeste = document.getElementById("table-head-sudeste");
 
-
 const doGet = (url) => {
     const promiseCallback = (resolve, reject) => {
         fetch(url)
@@ -158,7 +157,7 @@ const filterBaseByData = (database, dataInfo) => {
 doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
     // Rederizado resultado geral no HMTL
     // result.forEach(iterateResult)
-
+    
     const norteDatabase = filterBaseBySubsystem(result, "Norte");
     const nordesteDatabase = filterBaseBySubsystem(result, "Nordeste");
     const sulDatabase = filterBaseBySubsystem(result, "Sul");
@@ -168,6 +167,17 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
     nordesteDatabase.forEach(iterateResultNordeste);
     sulDatabase.forEach(iterateResultSul);
     sudesteDatabase.forEach(iterateResultSudeste);
+
+
+    const titleData = document.getElementById("titleData");
+
+    const titleItem = document.createElement("H1");
+    titleItem.innerHTML = 'Última atualização dos dados ocorreu em ' + result[0].Data;
+    titleData.appendChild(titleItem);
+
+
+
+    console.log(result[0].Data)
 
     const subSistemas = getSubSystems(result).map(subSystem =>
     result.filter(item => item.Subsistema == subSystem)
