@@ -6,6 +6,14 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+html{
+    --bg: linear-gradient(to right, #2F80ED, #56CCF2);
+    --bg-panel: rgb(54, 71, 166) ;
+    --color-headings: white;
+    --color-text: black;
+    --color-table: rgb(206, 230, 251);
+}
+
 body {
     overflow-x: hidden;
 }
@@ -13,9 +21,8 @@ body {
 .corpo{
     min-height: 100vh;
 
-    background: #56CCF2;
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
-    background: linear-gradient(to right, #2F80ED, #56CCF2);
+
+    background: var(--bg);
 
 
 
@@ -35,7 +42,6 @@ body {
 }
 
 .logo {
-    color: #fff;
     text-decoration: none;
     transition: 0.3s;
     font-size: 24px;
@@ -56,9 +62,9 @@ body {
 
 .nav-list a {
     text-shadow: 0.5px 0.5px 0.5px black;
-    color: #fff;
     text-decoration: none;
     transition: 0.3s;
+    color: var(--color-headings)
 }
 
 .nav-list a:hover {
@@ -69,7 +75,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(54, 71, 166);
+    background-color: var(--bg-panel);
     height: 8vh;
 }
 
@@ -99,8 +105,7 @@ body {
         right: 0;
         width: 100vw;
         height: 35vh;
-        background: -webkit-linear-gradient(to right, #1271ec, #0db0e7);
-        background: linear-gradient(to right, #1271ec, #0db0e7);
+        background: var(--bg);
         -webkit-box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
         -moz-box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
         box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
@@ -159,7 +164,7 @@ body {
 
     .title h1{
         
-        color: white;
+        color: var(--color-headings);
     }
     
     .reservatorios h1 {
@@ -292,7 +297,7 @@ body {
     justify-content: center;
     margin: 20px;
     padding: 50px;
-    color: white;
+    color: var(--color-headings);
     text-shadow: 0.5px 0.5px 0.5px black;
 }
 
@@ -303,10 +308,10 @@ body {
 }
 
 .table{
+    color: var(--color-text);
     text-align: center;
     margin-bottom: 50px;
-    /*width: 800px;*/
-    background-color: rgb(206, 230, 251);
+    background-color: var(--color-table);
 }
 
 .table thead{
@@ -327,7 +332,7 @@ th, tr:hover{
 
 .rodape{
     width: 100%;
-    background-color: rgb(54, 71, 166);
+    background-color: var(--bg-panel);
 }
 
 .rodape footer{
@@ -336,7 +341,7 @@ th, tr:hover{
 }
 
 .rodape p, a{
-    color: white;
+    color: var(--color-headings);
     text-align: center;
     text-decoration: none;
 }
@@ -388,8 +393,6 @@ th, tr:hover{
 
 .showInfo {
     min-width: 40px;    
-    background-color: white;
-    color: black;
     border-radius: 10%;
 }
 
@@ -402,15 +405,14 @@ th, tr:hover{
     border: solid 0.1px rgba(151, 192, 247, 0.3);
     border-radius: 15px;
     margin: 15px 5px;
-    background: -webkit-linear-gradient(to right, #1271ec, #0db0e7);
-    background: linear-gradient(to right, #1271ec, #0db0e7);
+    background: var(--bg);
     -webkit-box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
     -moz-box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
     box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
 }
 
 .groupItem h1 {
-    color: white;
+    color: var(--color-headings);
     align-items: center;
 
 }
@@ -424,6 +426,47 @@ th, tr:hover{
     justify-content: center;
 }
 
-.girar {
-    transform: rotate(180deg);
+
+/* DarkMode */
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+label::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background-color: var(--color-headings);
+}
+
+input:checked + label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 45px;
 }
