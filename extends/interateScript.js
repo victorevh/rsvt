@@ -174,6 +174,7 @@ const initialColors = {
     colorHeadings: getStyle(html, "--color-headings"),
     colorText: getStyle(html, "--color-text"),
     colorTable: getStyle(html, "--color-table"),
+    colorHtable: getStyle(html, "--color-htable"),
 }
 
 const darkMode = {
@@ -182,6 +183,7 @@ const darkMode = {
     colorHeadings: "#B5B5B5",
     colorText: "#B5B5B5",
     colorTable: "#434343",
+    colorHtable: "#121C1B",
 }
 
 const transformKey = key => 
