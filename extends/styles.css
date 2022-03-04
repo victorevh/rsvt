@@ -22,10 +22,7 @@ body {
 .corpo{
     min-height: 100vh;
 
-
     background: var(--bg);
-
-
 
     /* flexbox */
     display: -webkit-flex;
@@ -38,7 +35,6 @@ body {
     /* conteúdo justificado no centro */
 
     justify-content:center;
-
 
 }
 
