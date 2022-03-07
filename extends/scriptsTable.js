@@ -25,7 +25,6 @@ const doGet = (url) => {
     return new Promise(promiseCallback);
 }
 
-
 const usefulData = [ "Bacia", "Reservatorio", "ReservatorioPorcentagem", "ReservatorioValorUtil"];
 
 const dataDictionary = {
@@ -97,7 +96,6 @@ const iterateResultSul = (item) => {
         listElementSul.appendChild(tableRow);
         
 }
-
 
 // TABELA SUDESTE / CENTRO- OESTE
 
