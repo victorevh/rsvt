@@ -380,10 +380,6 @@ th, tr:hover{
     display: none;
 }
 
-.buttonRotate {
-    transform: rotate(0deg);
-}
-
 .showInfo {
     min-width: 40px;    
     border-radius: 10%;
