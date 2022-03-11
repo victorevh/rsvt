@@ -176,12 +176,16 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
 
 )
 
+var date = new Date ();
+var hours = data.getHours();
+
 let myObj = result;
 localStorage.setItem(result, JSON.stringify(myObj));
 
 let myItem = JSON.parse(localStorage.getItem(result));
 
 })
+
 
 .catch(console.error);
 
