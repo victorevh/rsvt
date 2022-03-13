@@ -157,8 +157,12 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
     // result.forEach(iterateResult)
     const titleData = document.getElementById("titleData");
 
+    // Organizando titulo da data com slice
+    const year = result[0].Data.slice(0,4);
+    const mouth = result[0].Data.slice(5,7);
+    const day = result[0].Data.slice(8,10);
     const titleItem = document.createElement("H1");
-    titleItem.innerHTML = 'Dados atualizados em ' + result[0].Data;
+    titleItem.innerHTML = 'Dados atualizados em ' + day + '/' + mouth + '/' +  + year;
     titleData.appendChild(titleItem);
     
     const norteDatabase = filterBaseBySubsystem(result, "Norte");
