@@ -185,7 +185,6 @@ const localStorageResult = JSON.parse(localStorage
 let infos = localStorage
     .getItem('result') !== null ? localStorageResult : []
 
-
 console.log(localStorageResult)
 
 
