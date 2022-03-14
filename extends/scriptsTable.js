@@ -180,16 +180,68 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
 
 )
 
-var date = new Date ();
-var hours = data.getHours();
+const localStorageResult = JSON.parse(localStorage
+    .getItem('result'));
+let infos = localStorage
+    .getItem('result') !== null ? localStorageResult : []
 
-let myObj = result;
-localStorage.setItem(result, JSON.stringify(myObj));
 
-let myItem = JSON.parse(localStorage.getItem(result));
+console.log(localStorageResult)
+
+
 
 })
 
 
 .catch(console.error);
 
+/*
+    function removeStorage(name) {
+        try {
+            localStorage.removeItem(name)
+            localStorage.removeItem(name + '_expiresIn')
+        } catch(e) {
+            console.log('removeStorage: Error removing key [' + key + '] from localstorage: ' + JSON.stringify(e));
+            return false;
+        }
+        return true;
+    }
+
+    function getStorage(key) {
+        var now = Date.now(); 
+        var expiresIn = localStorage.getItem(result+'_expiresIn');
+        if (expiresIn === undefined || expiresIn === null) { expiresIn = 0;}
+
+        if (expiresIn < now) {
+            removeStorage(key);
+            return null;
+        } else {
+            try {
+                var value = localStorage.getItem(result);
+                return value;
+            } catch(e) {
+                console.log('getStorage: Error reading key ['+ key + '] from localstorage: ' + JSON.stringify(e));
+                return null;
+            }
+        }
+    }
+    
+    function setStorage(key, value, expires) {
+        
+        if (expires === undefined || expires === null) {
+            expires = (24*60*60);
+        } else {
+            expires = Math.abs(expires);
+        }
+
+        var now = Date.now();
+        var schedule = now + expires*1000;
+        try {
+            localStorage.setItem(key, value);
+            localStorage.setItem(key + '_expiresIn', schedule);
+        } catch(e) {
+            console.log('setStorage: Error setting key ['+ key + '] in localstorage: ' + JSON.stringify(e));
+            return false;
+        }
+        return true;
+    }*/
