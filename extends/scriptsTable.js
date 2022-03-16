@@ -253,12 +253,9 @@ let myItem = JSON.parse(localStorage.getItem('dados'));
 
 console.log(myItem)
 
-
-setLocalStorage(myItem, true, 25);
+setLocalStorage(myItem, true, 23);
 
 var item = getLocalStorage('dados');
-
-
 
 })
 
