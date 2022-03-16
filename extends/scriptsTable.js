@@ -180,67 +180,86 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
 
 )
 
-const localStorageResult = JSON.parse(localStorage
-    .getItem('result'));
-let infos = localStorage
-    .getItem('result') !== null ? localStorageResult : []
+function localStorageExpires() {
+    var toRemove = [],                      // Itens para serem removidos
+        currentDate = new Date().getTime(); // Data atual em milissegundos
+    
+    for (var i = 0, j = localStorage.length; i < j; i++) {
+        var key = localStorage.key(i),
+            value = localStorage.getItem(key);
+        
+        // Verifica o formato do item para evitar conflito com outras aplicações
+        if (value && value[0] === "{" && value.slice(-1) === "}") {
 
-console.log(localStorageResult)
+            // Decodifica de volta para JSON
+            var current = JSON.parse(value);
+
+            // Checa a chave expires do item especifico se for mais antigo que a data atual é salvo no array
+            if (current.expires && current.expires <= currentDate) {
+                toRemove.push(key);
+            }
+        }
+    }
+
+    // Remove itens que já expiraram
+    // Se remover no primeiro loop isto poderia afetar a ordem pois quando se remove um item geralmente o objeto ou array são reordenados
+    for (var i = toRemove.length - 1; i >= 0; i--) {
+        localStorage.removeItem(toRemove[i]);
+    }
+}
+
+localStorageExpires(); //Auto executa a limpeza
+
+/**
+ * Função para adicionar itens no localStorage
+ * @param {string} chave Chave que será usada para obter o valor posteriormente
+ * @param {*} valor Quase qualquer tipo de valor pode ser adicionado, desde que não falhe no JSON.stringfy
+ * @param {number} Tempo de vida em minutos do item
+ */
+
+function setLocalStorage(chave, valor, minutos) {
+    var expirarem = new Date().getTime() + (6000 * minutos);
+
+    localStorage.setItem(chave, JSON.stringify({
+        "value": valor,
+        "expires": expirarem
+    }));
+}
+
+/**
+ * Função para obter itens do localStorage que não expiraram
+ * @param {string} chave Chave para obter o valor associado
+ * @return {*} Retorna qualquer valor, se o item tiver expirado irá retornar undefined
+ */
+
+function getLocalStorage(chave) {
+    localStorageExpires(); //Limpa itens
+    
+    var value = localStorage.getItem(chave);
+
+    if (value && value[0] === "{" && value.slice(-1) === "}") {
+
+        // Decodifica de volta para JSON
+        var current = JSON.parse(value);
+
+        return current.value;
+    }
+}
+
+let myObj = result;
+localStorage.setItem('dados', JSON.stringify(myObj));
+
+let myItem = JSON.parse(localStorage.getItem('dados'));
+
+console.log(myItem)
+
+
+setLocalStorage(myItem, true, 25);
+
+var item = getLocalStorage('dados');
 
 
 
 })
 
-
 .catch(console.error);
-
-/*
-    function removeStorage(name) {
-        try {
-            localStorage.removeItem(name)
-            localStorage.removeItem(name + '_expiresIn')
-        } catch(e) {
-            console.log('removeStorage: Error removing key [' + key + '] from localstorage: ' + JSON.stringify(e));
-            return false;
-        }
-        return true;
-    }
-
-    function getStorage(key) {
-        var now = Date.now(); 
-        var expiresIn = localStorage.getItem(result+'_expiresIn');
-        if (expiresIn === undefined || expiresIn === null) { expiresIn = 0;}
-
-        if (expiresIn < now) {
-            removeStorage(key);
-            return null;
-        } else {
-            try {
-                var value = localStorage.getItem(result);
-                return value;
-            } catch(e) {
-                console.log('getStorage: Error reading key ['+ key + '] from localstorage: ' + JSON.stringify(e));
-                return null;
-            }
-        }
-    }
-    
-    function setStorage(key, value, expires) {
-        
-        if (expires === undefined || expires === null) {
-            expires = (24*60*60);
-        } else {
-            expires = Math.abs(expires);
-        }
-
-        var now = Date.now();
-        var schedule = now + expires*1000;
-        try {
-            localStorage.setItem(key, value);
-            localStorage.setItem(key + '_expiresIn', schedule);
-        } catch(e) {
-            console.log('setStorage: Error setting key ['+ key + '] in localstorage: ' + JSON.stringify(e));
-            return false;
-        }
-        return true;
-    }*/
