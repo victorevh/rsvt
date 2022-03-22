@@ -452,7 +452,7 @@ label::after{
     bottom: 12.5%;
     background-color: white;
     border-radius: 90px;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 
 input:checked + label {
