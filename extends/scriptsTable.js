@@ -155,16 +155,51 @@ const filterBaseByData = (database, dataInfo) => {
 doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
     // Rederizado resultado geral no HMTL
     // result.forEach(iterateResult)
-    const titleData = document.getElementById("titleData");
-
-    // Organizando titulo da data com slice
-    const year = result[0].Data.slice(0,4);
-    const mouth = result[0].Data.slice(5,7);
-    const day = result[0].Data.slice(8,10);
-    const titleItem = document.createElement("H1");
-    titleItem.innerHTML = 'Dados atualizados em ' + day + '/' + mouth + '/' +  + year;
-    titleData.appendChild(titleItem);
     
+
+    function titleData(){
+        const titleData = document.getElementById("titleData");
+        // Organizando titulo da data com slice
+        const year = result[0].Data.slice(0,4);
+        const mouth = result[0].Data.slice(5,7);
+        const day = result[0].Data.slice(8,10);
+        const titleItem = document.createElement("H1");
+        titleItem.innerHTML = 'Dados atualizados em ' + day + '/' + mouth + '/' +  + year;
+        titleData.appendChild(titleItem);
+    }
+
+    function EAR(){
+        // Organizando EAR 3
+        const getEAR3 = window.document.getElementById('EAR3');
+        const EAR3 = result[19].SubsistemaValorUtil;
+        const titleEAR3 = document.createElement("h3");
+        titleEAR3.innerHTML = 'Energia Armazenada Disponível ' + EAR3 + '%';
+        getEAR3.appendChild(titleEAR3);
+    
+        // Organizando EAR 2
+        const getEAR2 = window.document.getElementById('EAR2');
+        const EAR2 = result[7].SubsistemaValorUtil;
+        const titleEAR2 = document.createElement("h3");
+        titleEAR2.innerHTML = 'Energia Armazenada Disponível ' + EAR2 + '%';
+        getEAR2.appendChild(titleEAR2);
+    
+        // Organizando EAR 1
+        const getEAR1 = window.document.getElementById('EAR1');
+        const EAR1 = result[3].SubsistemaValorUtil;
+        const titleEAR1 = document.createElement("h3");
+        titleEAR1.innerHTML = 'Energia Armazenada Disponível ' + EAR1 + '%';
+        getEAR1.appendChild(titleEAR1);
+    
+        // Organizando EAR
+        const getEAR = window.document.getElementById('EAR');
+        const EAR = result[0].SubsistemaValorUtil;
+        const titleEAR = document.createElement("h3");
+        titleEAR.innerHTML = 'Energia Armazenada Disponível ' + EAR + '%';
+        getEAR.appendChild(titleEAR);
+    }
+    titleData();
+    EAR();
+
     const norteDatabase = filterBaseBySubsystem(result, "Norte");
     const nordesteDatabase = filterBaseBySubsystem(result, "Nordeste");
     const sulDatabase = filterBaseBySubsystem(result, "Sul");
@@ -218,7 +253,7 @@ localStorageExpires(); //Auto executa a limpeza
  */
 
 function setLocalStorage(chave, valor, minutos) {
-    var expirarem = new Date().getTime() + (6000 * minutos);
+    var expirarem = new Date().getTime() + (1000 * minutos);
 
     localStorage.setItem(chave, JSON.stringify({
         "value": valor,
