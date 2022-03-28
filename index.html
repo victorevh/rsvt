@@ -13,7 +13,7 @@
    
     <header>
         <nav class="menu">
-            <a class="logo" href="#"><img src="./assets/favico/favicon-32x32.png" alt=""></a>
+            <a class="logo" href="#"><img src="./assets/favico/favicon-32x32.png" alt="Ilustração de Hidrelétrica"></a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -25,10 +25,19 @@
                 <li><a href="#bttn1">Reservatórios Nordeste</a></li>
                 <li><a href="#bttn">Reservatórios Norte</a></li> 
             </ul>
-            <div class="toggle">
-                <input id="switch" type="checkbox" name="theme">
-                   <label for="switch">Toogle</label>
-           </div>
+            <div class="tool">
+                <div>
+                    <img id="sun" src="./assets/icons/sun-white.svg" alt="">
+                </div>
+                <div class="toggle">
+                    <input id="switch" type="checkbox" name="theme">
+                       <label for="switch">Toogle</label>
+               </div>
+               <div>
+                    <img id="moon" src="./assets/icons/moon-white.svg" alt="">
+               </div>
+            </div>
+
         </nav>
     </header>
 
@@ -41,14 +50,19 @@
             
             <div class="groupItem">
                 
-                <h1 onclick="Mudarestado('minhaDiv3')" id="bttn3">Subsistema Sudeste / Centro-Oeste &puncsp;
+
+                <div id="bttn3" onclick="Mudarestado('minhaDiv3')">
+                    <h1>Subsistema Sudeste / Centro-Oeste &puncsp;
                         <button class="showInfo" type="button" >
                             <img id="img3" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
                         </button>
-                </h1>
+                    </h1>
 
-                <div id="EAR3"></div>
+                    <div id="EAR3"></div>
 
+                </div>
+
+                
                 <div class="item">
                     <div class="divBlock" id="minhaDiv3">
                         <table class="table">
@@ -57,19 +71,21 @@
                         </table>
                     </div>
                 </div>
-
             
             </div>
 
             <div class="groupItem">
-                
-                <h1 id="bttn2" onclick="Mudarestado('minhaDiv2')">Subsistema Sul&puncsp;
-                    <button class="showInfo" type="button">
-                        <img id="img2" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
-                    </button>
-                </h1>
 
-                <div id="EAR2"></div>
+                <div id="bttn2" onclick="Mudarestado('minhaDiv2')">
+                    <h1>Subsistema Sul&puncsp;
+                        <button class="showInfo" type="button">
+                            <img id="img2" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
+                        </button>
+                    </h1>
+    
+                    <div id="EAR2"></div>
+
+                </div>
 
                 <div class="item">
                     <div class="divBlock" id="minhaDiv2">
@@ -85,15 +101,17 @@
             </div>
 
             <div class="groupItem">
+
+                <div id="bttn1" onclick="Mudarestado('minhaDiv1')">
+                    <h1>Subsistema Nordeste&puncsp;
+                        <button class="showInfo" type="button">
+                            <img id="img1" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
+                        </button>
+                    </h1>
+    
+                    <div id="EAR1"></div>
+                </div>
                 
-                <h1 id="bttn1" onclick="Mudarestado('minhaDiv1')">Subsistema Nordeste&puncsp;
-                    <button class="showInfo" type="button">
-                        <img id="img1" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
-                    </button>
-                </h1>
-
-                <div id="EAR1"></div>
-
                 <div class="item">
                     <div class="divBlock" id="minhaDiv1">
                         <table class="table">
@@ -107,15 +125,18 @@
             </div>
             
             <div class="groupItem">
+            
+                <div id="bttn" onclick="Mudarestado('minhaDiv')">
+                    <h1>Subsistema Norte&puncsp;
+                        <button class="showInfo" type="button">
+                            <img id="img" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
+                        </button>
+                    </h1>
+    
+                    <div id="EAR"></div>
+    
+                </div>
                 
-                <h1 id="bttn" onclick="Mudarestado('minhaDiv')">Subsistema Norte&puncsp;
-                    <button class="showInfo" type="button">
-                        <img id="img" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
-                    </button>
-                </h1>
-
-                <div id="EAR"></div>
-
                 <div class="item">
                     <div class="divBlock" id="minhaDiv">
                         <table class="table">
