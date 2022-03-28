@@ -172,29 +172,37 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
         // Organizando EAR 3
         const getEAR3 = window.document.getElementById('EAR3');
         const EAR3 = result[19].SubsistemaValorUtil;
+        const EAR3stringify = JSON.stringify(EAR3);
+        const EAR3slice = EAR3stringify.slice(0,5);
         const titleEAR3 = document.createElement("h3");
-        titleEAR3.innerHTML = 'Energia Armazenada Disponível ' + EAR3 + '%';
+        titleEAR3.innerHTML = 'EAR - Energia Armazenada Disponível ' + EAR3slice + '%';
         getEAR3.appendChild(titleEAR3);
     
         // Organizando EAR 2
         const getEAR2 = window.document.getElementById('EAR2');
         const EAR2 = result[7].SubsistemaValorUtil;
+        const EAR2stringfy = JSON.stringify(EAR2);
+        const EAR2slice = EAR2stringfy.slice(0,5);
         const titleEAR2 = document.createElement("h3");
-        titleEAR2.innerHTML = 'Energia Armazenada Disponível ' + EAR2 + '%';
+        titleEAR2.innerHTML = 'EAR - Energia Armazenada Disponível ' + EAR2slice + '%';
         getEAR2.appendChild(titleEAR2);
     
         // Organizando EAR 1
         const getEAR1 = window.document.getElementById('EAR1');
         const EAR1 = result[3].SubsistemaValorUtil;
+        const EAR1stringfy = JSON.stringify(EAR1);
+        const EAR1slice = EAR1stringfy.slice(0,5);
         const titleEAR1 = document.createElement("h3");
-        titleEAR1.innerHTML = 'Energia Armazenada Disponível ' + EAR1 + '%';
+        titleEAR1.innerHTML = 'EAR - Energia Armazenada Disponível ' + EAR1slice + '%';
         getEAR1.appendChild(titleEAR1);
     
         // Organizando EAR
         const getEAR = window.document.getElementById('EAR');
         const EAR = result[0].SubsistemaValorUtil;
+        const EARstringfy = JSON.stringify(EAR);
+        const EARslice = EARstringfy.slice(0,5);
         const titleEAR = document.createElement("h3");
-        titleEAR.innerHTML = 'Energia Armazenada Disponível ' + EAR + '%';
+        titleEAR.innerHTML = 'EAR - Energia Armazenada Disponível ' + EARslice + '%';
         getEAR.appendChild(titleEAR);
     }
     titleData();
@@ -281,18 +289,25 @@ function getLocalStorage(chave) {
     }
 }
 
-let myObj = result;
-localStorage.setItem('dados', JSON.stringify(myObj));
+function setStorage() {
+    let myObj = result;
+    localStorage.setItem('dados', JSON.stringify(myObj));
 
-let myItem = JSON.parse(localStorage.getItem('dados'));
+    let myItem = JSON.parse(localStorage.getItem('dados'));
 
-setLocalStorage('dados', myItem, true, 23);
+    setLocalStorage('dados', myItem, true, 23);
+}
 
-var item = getLocalStorage('dados');
+setStorage();
+
+function getlocal(){
+    var item = getLocalStorage('dados');
+}
+
+getlocal();
+
 
 localStorageExpires(); //Auto executa a limpeza
-
-
 
 })
 
