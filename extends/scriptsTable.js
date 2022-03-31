@@ -300,11 +300,13 @@ function setStorage() {
 
 setStorage();
 
-function getlocal(){
+getLocalStorage('dados');
+
+/*function getlocal(){
     var item = getLocalStorage('dados');
 }
 
-getlocal();
+getlocal();*/
 
 
 localStorageExpires(); //Auto executa a limpeza
