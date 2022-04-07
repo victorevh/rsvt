@@ -16,9 +16,14 @@ const doGet = (url) => {
         fetch(url)
             .then((response) => {
                 if(!response.ok) throw new Error('Erro ao executar requisição, status' + response.status);
+
                 return response.json();
 })
 
+        .then((data) => {
+            localStorage.setItem('dados', JSON.stringify(data) );
+            return data;
+        })
         .then(resolve)
         .catch(reject);
 }
@@ -152,7 +157,7 @@ const filterBaseByData = (database, dataInfo) => {
     });
 }
 
-doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result => {
+const onsRequestHandler = (result) => {
     // Rederizado resultado geral no HMTL
     // result.forEach(iterateResult)
     
@@ -219,98 +224,30 @@ doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(result =
     sudesteDatabase.forEach(iterateResultSudeste);
 
     const subSistemas = getSubSystems(result).map(subSystem =>
-    result.filter(item => item.Subsistema == subSystem)
+    result.filter(item => item.Subsistema == subSystem))
 
-)
+}
 
-function localStorageExpires() {
-    var toRemove = [],                      // Itens para serem removidos
-        currentDate = new Date().getTime(); // Data atual em milissegundos
+
+function getCacheData() {
     
-    for (var i = 0, j = localStorage.length; i < j; i++) {
-        var key = localStorage.key(i),
-            value = localStorage.getItem(key);
-        
-        // Verifica o formato do item para evitar conflito com outras aplicações
-        if (value && value[0] === "{" && value.slice(-1) === "}") {
-
-            // Decodifica de volta para JSON
-            var current = JSON.parse(value);
-
-            // Checa a chave expires do item especifico se for mais antigo que a data atual é salvo no array
-            if (current.expires && current.expires <= currentDate) {
-                toRemove.push(key);
-            }
-        }
-    }
-
-    // Remove itens que já expiraram
-    // Se remover no primeiro loop isto poderia afetar a ordem pois quando se remove um item geralmente o objeto ou array são reordenados
-    for (var i = toRemove.length - 1; i >= 0; i--) {
-        localStorage.removeItem(toRemove[i]);
-    }
-}
-
-localStorageExpires(); //Auto executa a limpeza
-
-/**
- * Função para adicionar itens no localStorage
- * @param {string} chave Chave que será usada para obter o valor posteriormente
- * @param {*} valor Quase qualquer tipo de valor pode ser adicionado, desde que não falhe no JSON.stringfy
- * @param {number} Tempo de vida em minutos do item
- */
-
-function setLocalStorage(chave, valor, minutos) {
-    var expirarem = new Date().getTime() + (1000 * minutos);
-
-    localStorage.setItem(chave, JSON.stringify({
-        "value": valor,
-        "expires": expirarem
-    }));
-}
-
-/**
- * Função para obter itens do localStorage que não expiraram
- * @param {string} chave Chave para obter o valor associado
- * @return {*} Retorna qualquer valor, se o item tiver expirado irá retornar undefined
- */
-
-function getLocalStorage(chave) {
-    localStorageExpires(); //Limpa itens
+    var cache = localStorage.getItem('dados');
     
-    var value = localStorage.getItem(chave);
+    return cache;
+};
 
-    if (value && value[0] === "{" && value.slice(-1) === "}") {
+// Função de inicialização
+function main() {
+    //Verificar se os dados estão no cache
 
-        // Decodifica de volta para JSON
-        var current = JSON.parse(value);
-
-        return current.value;
-    }
+    var data = getCacheData();
+    
+    if(data){
+        onsRequestHandler(JSON.parse(data));
+    }else{
+        doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(onsRequestHandler).catch(console.error);
+    };
+    
 }
 
-function setStorage() {
-    let myObj = result;
-    localStorage.setItem('dados', JSON.stringify(myObj));
-
-    let myItem = JSON.parse(localStorage.getItem('dados'));
-
-    setLocalStorage('dados', myItem, true, 23);
-}
-
-setStorage();
-
-getLocalStorage('dados');
-
-/*function getlocal(){
-    var item = getLocalStorage('dados');
-}
-
-getlocal();*/
-
-
-localStorageExpires(); //Auto executa a limpeza
-
-})
-
-.catch(console.error);
+main();
