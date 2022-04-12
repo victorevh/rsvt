@@ -161,7 +161,6 @@ const onsRequestHandler = (result) => {
     // Rederizado resultado geral no HMTL
     // result.forEach(iterateResult)
     
-
     function titleData(){
         const titleData = document.getElementById("titleData");
         // Organizando titulo da data com slice
