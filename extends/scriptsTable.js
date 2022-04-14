@@ -239,13 +239,23 @@ function getCacheData() {
 function main() {
     //Verificar se os dados estão no cache
 
-    var data = getCacheData();
-    
+    const data = getCacheData();
+
+
     if(data){
-        onsRequestHandler(JSON.parse(data));
-    }else{
-        doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios').then(onsRequestHandler).catch(console.error);
-    };
+        const today = new Date();
+        const date = new Date((JSON.parse(data))[0].Data)
+        const diffTime = Math.abs(date.getTime() - today.getTime());
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
+        if(diffDays < 1){
+            onsRequestHandler(JSON.parse(data));
+            return onsRequestHandler;
+        }
+    }
+    
+    doGet('http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios')
+    .then(onsRequestHandler)
+    .catch(console.error);
     
 }
 
