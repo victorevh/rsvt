@@ -103,6 +103,9 @@ body {
 }
 
 .textDiv p {
+    padding: 20px;
+    text-indent: 2em;
+    text-align: justify;
     font-size: 20px;
     color: var(--color-headings);
     text-shadow: black 0.5px 0.5px 0.5px;
