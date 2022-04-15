@@ -7,7 +7,7 @@
 }
 
 html{
-    --bg: linear-gradient(to right, #2F80ED, #56CCF2);
+    --bg:#2F80ED;
     --bg-panel: rgb(54, 71, 166) ;
     --color-headings: white;
     --color-text: black;
@@ -93,6 +93,19 @@ body {
     background: #fff;
     margin: 8px;
     transition: 0.3s;
+}
+
+.textDiv {
+    margin: 0px 5px;
+    padding: 20px;
+    border: solid 1px rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+}
+
+.textDiv p {
+    font-size: 20px;
+    color: var(--color-headings);
+    text-shadow: black 0.5px 0.5px 0.5px;
 }
 
 @media (max-width: 999px) {
@@ -193,7 +206,7 @@ body {
         color: var(--color-headings);
     }
     
-    .reservatorios h1, h3 {
+    .groupItem h1, h3 {
         text-align: center;
         font-size: 16px;
     }
@@ -295,13 +308,13 @@ body {
     padding: 2.5px;
 }
 
-.title {
-    margin: 35px 0px;
-}
-
 .title h1 {
-    font-size: 20px;
+    margin: 100px 0px;
     text-align: center;
+    color: var(--color-headings);
+    display: flex;
+    justify-content: center;
+    text-shadow: 0.5px 0.5px 0.5px black;
     
 }
 
@@ -313,7 +326,7 @@ body {
 
 }
 
-.reservatorios h1, h3{
+.groupItem h1, h3{
     display: flex;
     justify-content: center;
     margin: 20px;
@@ -323,7 +336,7 @@ body {
     text-shadow: 0.5px 0.5px 0.5px black;
 }
 
-.reservatorios h3{
+.groupItem h3{
     display: flex;
     justify-content: center;
     margin-top: -50px;
@@ -427,13 +440,9 @@ th, tr:hover{
 }
 
 .groupItem {
-    border: solid 0.1px rgba(151, 192, 247, 0.3);
+    border: solid 1px rgba(255, 255, 255, 0.4);
     border-radius: 15px;
     margin: 15px 5px;
-    background: var(--bg);
-    -webkit-box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
-    box-shadow: 9px 10px 15px rgba(50, 50, 50, 0.3);
 }
 
 .groupItem h1 {
