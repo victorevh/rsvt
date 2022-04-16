@@ -170,19 +170,27 @@ const getStyle = (element, style) =>
 
 const initialColors = {
     bg: getStyle(html, "--bg"),
+    bgSecondary: getStyle(html, "--bg-secondary"),
+    borderPrimary: getStyle(html, "--border-primary"),
+    borderMenu: getStyle(html, "--border-menu"),
     bgPanel: getStyle(html, "--bg-panel"),
     colorHeadings: getStyle(html, "--color-headings"),
     colorText: getStyle(html, "--color-text"),
     colorTable: getStyle(html, "--color-table"),
+    colorTablechild: getStyle(html, "--color-tablechild"),
     colorHtable: getStyle(html, "--color-htable"),
 }
 
 const darkMode = {
     bg: "#333333",
+    bgSecondary: "#333333",
+    borderPrimary: "#B5B5B5",
+    borderMenu: "#52525e",
     bgPanel: "#434343",
     colorHeadings: "#B5B5B5",
     colorText: "#B5B5B5",
     colorTable: "#434343",
+    colorTablechild: "#434343",
     colorHtable: "#121C1B",
 }
 
