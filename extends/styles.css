@@ -15,9 +15,10 @@ html{
     --color-htable: rgb(168, 218, 213);
 }
 
-body {
-    overflow-x: hidden;
-}
+html, body {
+    position:relative;
+    overflow-x:hidden;
+  }
 
 .corpo{
     min-height: 100vh;
@@ -113,9 +114,10 @@ body {
 
 @media (max-width: 999px) {
     
-    body {
-        overflow-x: hidden;
-    }
+    html, body {
+        position:relative;
+        overflow-x:hidden;
+      }
 
     .nav-list {
         z-index: 1;
