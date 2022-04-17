@@ -9,7 +9,7 @@ html{
     --bg-secondary: #f9f9fb;
     --border-primary: #cfcfd8;
     --border-menu: #52525e;
-    --bg-panel: #0047ab;
+    --bg-panel: rgb(54, 71, 166);
     --color-headings: white;
     --color-text: #15141a;
     --color-table: #ccc;
