@@ -220,6 +220,7 @@ html, body {
 
         
     .groupItem{
+        justify-content: center;
         min-width: 370px;
     }
     
@@ -239,6 +240,7 @@ html, body {
     .table {
         display: block;
         max-width: 45vh;
+        justify-content: center;
     }
 
     .table thead,
@@ -274,6 +276,7 @@ html, body {
      
     .groupItem{
         min-width: 330px;
+        justify-content: center;
     }
 
 
