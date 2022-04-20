@@ -78,6 +78,9 @@ html, body {
 }   
 
 .menu {
+    z-index: 3;
+    width: 100%;
+    position: fixed;
     height: 10vh;
     display: flex;
     justify-content: space-around;
@@ -97,6 +100,10 @@ html, body {
     background: #fff;
     margin: 8px;
     transition: 0.3s;
+}
+
+.title:nth-child(1) {
+    margin-top: 80px
 }
 
 .textDiv {
