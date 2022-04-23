@@ -143,7 +143,7 @@ function gerScrollTopByHref(element){
 // Trata o clique prevenindo o evento padrão do HTML e define a distancia do alvo
 function scrollToIdOnClick(event) {
     event.preventDefault();
-    const to = gerScrollTopByHref(event.target) - 25;
+    const to = gerScrollTopByHref(event.target) - 120;
 
     scrollToPosition(to);
 
