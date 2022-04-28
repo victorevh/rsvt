@@ -427,7 +427,13 @@ tr:hover{
     padding: 15px;
 }
 
-.rodape p, a{
+.rodape p{
+    color: var(--color-headings);
+    text-align: center;
+    text-decoration: none;
+}
+
+.mail{
     color: var(--color-headings);
     text-align: center;
     text-decoration: none;
