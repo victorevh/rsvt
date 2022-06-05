@@ -46,6 +46,11 @@ div[vw].enabled {
 
 }
 
+iframe {
+    width: 960px;
+    height: 600px;
+}
+
 .logo {
     text-decoration: none;
     max-width: 8vh;
@@ -107,28 +112,13 @@ div[vw].enabled {
     transition: 0.3s;
 }
 
-.title:nth-child(1) {
-    margin-top: 80px
-}
-
-.textDiv {
-    margin: 0px 5px;
-    padding: 20px;
-    border: solid 1px var(--border-primary);
-    background: var(--bg-secondary);
-    border-radius: 15px;
-}
-
-.textDiv p {
-    padding: 20px;
-    text-indent: 2em;
-    text-align: justify;
-    font-size: 20px;
-    color: var(--color-text);
-}
-
 @media (max-width: 999px) {
- 
+
+    iframe {
+        width: 860px;
+        height: 640px;
+    }
+    
     .tableItem{
         display: flex;
         align-items: center;
@@ -169,7 +159,16 @@ div[vw].enabled {
         display: block;
         padding: 0px 50px;
     }
+
     
+    
+}
+
+@media (max-width: 840px){
+    iframe {
+        width: 760px;
+        height: 480px;
+    }
 }
 
 @keyframes navLinkFade {
@@ -224,6 +223,12 @@ div[vw].enabled {
     margin-top: 4px;
 }
 /* section styles */
+@media (max-width: 640px) {
+    iframe{
+        width: 480px;
+        height: 340px;
+    }
+}
 
 @media (max-width: 500px) {
 
@@ -244,7 +249,7 @@ div[vw].enabled {
         text-align: center;
         font-size: 16px;
     }
-
+    
         
     .groupItem{
         justify-content: center;
@@ -260,6 +265,11 @@ div[vw].enabled {
         
         margin: 15px;
         
+    }
+
+    iframe {
+        width: 360px;
+        height: 280px;
     }
 
       /* Responsive Table */
@@ -300,6 +310,11 @@ div[vw].enabled {
 }
 
 @media (max-width: 380px) {
+
+    iframe {
+        width: 320px;
+        height: 240px;
+    }
 
     .tableItem{
         display: flex;
@@ -359,8 +374,32 @@ div[vw].enabled {
     padding: 2.5px;
 }
 
+.textDiv:nth-child(1){
+    margin-top: 150px
+}
+
+.textDiv {
+    margin: 30px 5px;
+    padding: 20px;
+    border: solid 1px var(--border-primary);
+    background: var(--bg-secondary);
+    border-radius: 15px;
+}
+
+.textDiv p {
+    padding: 20px;
+    text-indent: 2em;
+    text-align: justify;
+    font-size: 20px;
+    color: var(--color-text);
+}
+
+.title:nth-child(1){
+    margin-top: 120px;
+}
+
 .title h1 {
-    margin: 100px 0px;
+    margin: 40px;
     text-align: center;
     color: var(--color-text);
     display: flex;

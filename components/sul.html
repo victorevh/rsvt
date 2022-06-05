@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     
     <title>Nível de Reservatórios</title>
-    <link rel="stylesheet" href="./extends/styles.css">
-    <link rel="shortcut icon" href="./assets/favico/favicon-32x32.png">
+    <link rel="stylesheet" href="/extends/styles.css">
+    <link rel="shortcut icon" href="/assets/favico/favicon-32x32.png">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-228112966-1"></script>
@@ -24,29 +24,29 @@
    
     <header>
         <nav class="menu">
-            <img class="logo" src="./assets/favico/favicon-32x32.png" alt="Ilustração de Hidrelétrica">
+            <img class="logo" src="/assets/favico/favicon-32x32.png" alt="Ilustração de Hidrelétrica">
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="./components/sudeste.html">Sudeste / Centro-Oeste</a></li>
-                <li><a href="./components/sul.html">Sul</a></li>
-                <li><a href="./components/nordeste.html">Nordeste</a></li>
-                <li><a href="./components/norte.html">Norte</a></li> 
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="./sudeste.html">Sudeste / Centro-Oeste</a></li>
+                <li><a href="./sul.html">Sul</a></li>
+                <li><a href="./nordeste.html">Nordeste</a></li>
+                <li><a href="./norte.html">Norte</a></li> 
             </ul>
             <div class="tool">
                 <div>
-                    <img id="sun" src="./assets/icons/sun-white.svg" alt="">
+                    <img id="sun" src="/assets/icons/sun-white.svg" alt="">
                 </div>
                 <div class="toggle">
                     <input id="switch" type="checkbox" name="theme">
                        <label for="switch">Toogle</label>
                </div>
                <div>
-                    <img id="moon" src="./assets/icons/moon-white.svg" alt="">
+                    <img id="moon" src="/assets/icons/moon-white.svg" alt="">
                </div>
             </div>
 
@@ -58,27 +58,39 @@
 
         <section class="reservatorios">
             
+            <div id="titleData" class="title">
+                
+            </div>
+            
+            <div class="groupItem" id="target2">
 
-            <div class="title">
-                <h1>Sobre a Plataforma</h1>
+                <div id="bttn2" onclick="Mudarestado('minhaDiv2')">
+                    <h1>Subsistema Sul&puncsp;
+                        <button class="showInfo" type="button">
+                            <img id="img2" src="/assets/icons/arrow.svg" alt="Botão para exibir dados">
+                        </button>
+                    </h1>
+    
+                    <div id="EAR"></div>
+
+                </div>
+
+                <div class="item">
+                    <div class="divBlock" id="minhaDiv2">
+                        <div class="tableItem">
+                            <table class="table">
+                                <thead id="table-head"></theade>
+                                <tbody id="lista"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                
+
             </div>
 
             
-            <div class="textDiv">
-
-                <p>A plataforma exibe dados acerca de todos os subsistemas energéticos do Brasil, detalhando informações sobre os reservatórios que compõe as hidrelétricas e respectivamente os subsistemas energéticos. Clicando em um subsistema você pode verificar os níveis de cada reservatório através do Valor Útil Atual em porcento, você também pode verificar qual a participação de cada reservatório no subsistema através da porcentagem, assim como também é possível ver qual a quantia de Energia Armazenada Disponível em cada subsistema, também é possível verificar quais bacias hidrográficas compõem os principais reservatórios. </p>
-
-            </div>
-
-            <div class="title">
-                <h1>Capacidade Remancescente do Sistema Interligado Nacional</h1>
-            </div>
-            
-            <div class="textDiv">
-
-                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWExNTI0OTctZjMzYi00MDlmLTlmYWYtMGY1ZTQ4ZWIxZmQ5IiwidCI6IjNhZGVlNWZjLTkzM2UtNDkxMS1hZTFiLTljMmZlN2I4NDQ0OCIsImMiOjR9" frameborder="0"></iframe>
-            </div>
-
         </section>
         
     </div>
@@ -103,10 +115,10 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
       </script>
 
-    <script type="text/javascript" src="./extends/interateScript.js"></script>
-    <script type="text/javascript" src="./extends/scriptsTable.js"></script>
-    <script>
-        window.addData()
+    <script type="text/javascript" src="/extends/interateScript.js"></script>
+    <script type="text/javascript" src="/extends/scriptsTable.js"></script>
+    <script type="text/javascript">
+        window.addData("Sul", 7)
     </script>
 
 
