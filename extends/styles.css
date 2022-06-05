@@ -46,11 +46,6 @@ div[vw].enabled {
 
 }
 
-iframe {
-    width: 960px;
-    height: 600px;
-}
-
 .logo {
     text-decoration: none;
     max-width: 8vh;
@@ -112,13 +107,28 @@ iframe {
     transition: 0.3s;
 }
 
-@media (max-width: 999px) {
+.title:nth-child(1) {
+    margin-top: 80px
+}
 
-    iframe {
-        width: 860px;
-        height: 640px;
-    }
-    
+.textDiv {
+    margin: 0px 5px;
+    padding: 20px;
+    border: solid 1px var(--border-primary);
+    background: var(--bg-secondary);
+    border-radius: 15px;
+}
+
+.textDiv p {
+    padding: 20px;
+    text-indent: 2em;
+    text-align: justify;
+    font-size: 20px;
+    color: var(--color-text);
+}
+
+@media (max-width: 999px) {
+ 
     .tableItem{
         display: flex;
         align-items: center;
@@ -159,16 +169,7 @@ iframe {
         display: block;
         padding: 0px 50px;
     }
-
     
-    
-}
-
-@media (max-width: 840px){
-    iframe {
-        width: 760px;
-        height: 480px;
-    }
 }
 
 @keyframes navLinkFade {
@@ -223,12 +224,6 @@ iframe {
     margin-top: 4px;
 }
 /* section styles */
-@media (max-width: 640px) {
-    iframe{
-        width: 480px;
-        height: 340px;
-    }
-}
 
 @media (max-width: 500px) {
 
@@ -249,7 +244,7 @@ iframe {
         text-align: center;
         font-size: 16px;
     }
-    
+
         
     .groupItem{
         justify-content: center;
@@ -265,11 +260,6 @@ iframe {
         
         margin: 15px;
         
-    }
-
-    iframe {
-        width: 360px;
-        height: 280px;
     }
 
       /* Responsive Table */
@@ -310,11 +300,6 @@ iframe {
 }
 
 @media (max-width: 380px) {
-
-    iframe {
-        width: 320px;
-        height: 240px;
-    }
 
     .tableItem{
         display: flex;
@@ -374,32 +359,8 @@ iframe {
     padding: 2.5px;
 }
 
-.textDiv:nth-child(1){
-    margin-top: 150px
-}
-
-.textDiv {
-    margin: 30px 5px;
-    padding: 20px;
-    border: solid 1px var(--border-primary);
-    background: var(--bg-secondary);
-    border-radius: 15px;
-}
-
-.textDiv p {
-    padding: 20px;
-    text-indent: 2em;
-    text-align: justify;
-    font-size: 20px;
-    color: var(--color-text);
-}
-
-.title:nth-child(1){
-    margin-top: 120px;
-}
-
 .title h1 {
-    margin: 40px;
+    margin: 100px 0px;
     text-align: center;
     color: var(--color-text);
     display: flex;
