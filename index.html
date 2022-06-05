@@ -31,10 +31,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="#target3">Sudeste / Centro-Oeste</a></li>
-                <li><a href="#target2">Sul</a></li>
-                <li><a href="#target1">Nordeste</a></li>
-                <li><a href="#target">Norte</a></li> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="./components/sudeste.html">Sudeste / Centro-Oeste</a></li>
+                <li><a href="./components/sul.html">Sul</a></li>
+                <li><a href="./components/nordeste.html">Nordeste</a></li>
+                <li><a href="./components/norte.html">Norte</a></li> 
             </ul>
             <div class="tool">
                 <div>
@@ -57,126 +58,27 @@
 
         <section class="reservatorios">
             
+
             <div class="title">
                 <h1>Sobre a Plataforma</h1>
+            </div>
+
+            
+            <div class="textDiv">
+
+                <p>A plataforma exibe dados acerca de todos os subsistemas energéticos do Brasil, detalhando informações sobre os reservatórios que compõe as hidrelétricas e respectivamente os subsistemas energéticos. Clicando em um subsistema você pode verificar os níveis de cada reservatório através do Valor Útil Atual em porcento, você também pode verificar qual a participação de cada reservatório no subsistema através da porcentagem, assim como também é possível ver qual a quantia de Energia Armazenada Disponível em cada subsistema, também é possível verificar quais bacias hidrográficas compõem os principais reservatórios. </p>
+
+            </div>
+
+            <div class="title">
+                <h1>Capacidade Remancescente do Sistema Interligado Nacional</h1>
             </div>
             
             <div class="textDiv">
 
-                
-
-                <p>A plataforma exibe dados acerca de todos os subsistemas energéticos do Brasil, detalhando informações sobre os reservatórios que compõe as hidrelétricas e respectivamente os subsistemas energéticos. Clicando em um subsistema você pode verificar os níveis de cada reservatório através do Valor Útil Atual em porcento, você também pode verificar qual a participação de cada reservatório no subsistema através da porcentagem, assim como também é possível ver qual a quantia de Energia Armazenada Disponível em cada subsistema, também é possível verificar quais bacias hidrográficas compõem os principais reservatórios. </p>
-            </div>
-            
-            <div id="titleData" class="title">
-                
-            </div>
-            
-            <div class="groupItem" id="target3">
-                
-                <div id="bttn3" onclick="Mudarestado('minhaDiv3')">
-                    <h1>Subsistema Sudeste / Centro-Oeste &puncsp;
-                        <button class="showInfo" type="button" >
-                            <img id="img3" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
-                        </button>
-                    </h1>
-
-                    <div id="EAR3"></div>
-
-                </div>
-
-                <div class="item">
-                    <div class="divBlock" id="minhaDiv3">
-                        <div class="tableItem">
-                            <table class="table">
-                                <thead id="table-head-sudeste"></theade>
-                                <tbody id="listaSudeste"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            
+                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWExNTI0OTctZjMzYi00MDlmLTlmYWYtMGY1ZTQ4ZWIxZmQ5IiwidCI6IjNhZGVlNWZjLTkzM2UtNDkxMS1hZTFiLTljMmZlN2I4NDQ0OCIsImMiOjR9" frameborder="0"></iframe>
             </div>
 
-            <div class="groupItem" id="target2">
-
-                <div id="bttn2" onclick="Mudarestado('minhaDiv2')">
-                    <h1>Subsistema Sul&puncsp;
-                        <button class="showInfo" type="button">
-                            <img id="img2" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
-                        </button>
-                    </h1>
-    
-                    <div id="EAR2"></div>
-
-                </div>
-
-                <div class="item">
-                    <div class="divBlock" id="minhaDiv2">
-                        <div class="tableItem">
-                            <table class="table">
-                                <thead id="table-head-sul"></theade>
-                                <tbody id="listaSul"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-            </div>
-
-            <div class="groupItem" id="target1">
-
-                <div id="bttn1" onclick="Mudarestado('minhaDiv1')">
-                    <h1>Subsistema Nordeste&puncsp;
-                        <button class="showInfo" type="button">
-                            <img id="img1" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
-                        </button>
-                    </h1>
-    
-                    <div id="EAR1"></div>
-                </div>
-                
-                <div class="item">
-                    <div class="divBlock" id="minhaDiv1">
-                        <div class="tableItem">
-                            <table class="table">
-                                <thead id="table-head-nordeste"></theade>
-                                <tbody id="listaNordeste"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                
-            </div>
-            
-            <div class="groupItem" id="target">
-            
-                <div id="bttn" onclick="Mudarestado('minhaDiv')">
-                    <h1>Subsistema Norte&puncsp;
-                        <button class="showInfo" type="button">
-                            <img id="img" src="./assets/icons/arrow.svg" alt="Botão para exibir dados">
-                        </button>
-                    </h1>
-    
-                    <div id="EAR"></div>
-    
-                </div>
-                
-                <div class="item">
-                    <div class="divBlock" id="minhaDiv">
-                        <div class="tableItem">
-                            <table class="table">
-                                <thead id="table-head-norte"></theade>
-                                <tbody id="listaNorte"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
         </section>
         
     </div>
@@ -203,6 +105,9 @@
 
     <script type="text/javascript" src="./extends/interateScript.js"></script>
     <script type="text/javascript" src="./extends/scriptsTable.js"></script>
+    <script>
+        window.addData()
+    </script>
 
 
 
