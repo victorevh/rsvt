@@ -1,4 +1,5 @@
 window.addData = (region, earNumber) => {
+
     const listElement = document.getElementById("lista");
     const tableHead = document.getElementById("table-head");
 
@@ -20,11 +21,6 @@ window.addData = (region, earNumber) => {
         }
         return new Promise(promiseCallback);
     }
-
-    const renderTable = () => {
-        if (!tableHead) return;
-    }
-    renderTable();
 
     const usefulData = ["Bacia", "Reservatorio", "ReservatorioPorcentagem", "ReservatorioValorUtil"];
 
