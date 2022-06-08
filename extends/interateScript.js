@@ -61,51 +61,6 @@ function Mudarestado(el) {
 
 document.addEventListener("DOMContentLoaded",function(){
     
-    document.getElementById("bttn3").addEventListener("click",function(){
-
-        var img = document.getElementById("img3");
-        
-        if(img.style.transform == "scale(-1)") {
-            
-            img.style.transform = 'scale(1)'
-       
-        }else{
-            
-            img.style.transform = 'scale(-1)'
-       
-        }
-    })
-
-    document.getElementById("bttn2").addEventListener("click",function(){
-
-        var img = document.getElementById("img2");
-        
-        if(img.style.transform == "scale(-1)") {
-            
-            img.style.transform = 'scale(1)'
-       
-        }else{
-            
-            img.style.transform = 'scale(-1)'
-       
-        }
-    })
-
-    document.getElementById("bttn1").addEventListener("click",function(){
-
-        var img = document.getElementById("img1");
-        
-        if(img.style.transform == "scale(-1)") {
-            
-            img.style.transform = 'scale(1)'
-       
-        }else{
-            
-            img.style.transform = 'scale(-1)'
-       
-        }
-    })
-
     document.getElementById("bttn").addEventListener("click",function(){
 
         var img = document.getElementById("img");
@@ -120,7 +75,7 @@ document.addEventListener("DOMContentLoaded",function(){
        
         }
     })
-    
+
 })
 
 // Scroll
@@ -205,5 +160,6 @@ const changeColors = (colors) => {
 
 checkbox.addEventListener("change", ({target}) => {
     target.checked ? changeColors(darkMode) : changeColors (initialColors)
+
 }) 
 
