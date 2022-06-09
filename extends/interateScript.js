@@ -43,7 +43,7 @@ const mobileNavbar = new MobileNavbar(
 
 mobileNavbar.init()
 
-// Seções
+/*
 
 function Mudarestado(el) {
     var display = document.getElementById(el).style.display;
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded",function(){
         }
     })
 
-})
+})*/
 
 // Scroll
 
@@ -158,8 +158,21 @@ const changeColors = (colors) => {
     )
 }
 
+const checkboxColorMode = JSON.parse(localStorage.getItem('color-mode'))
+
+if (checkboxColorMode) {
+    checkbox.checked = checkboxColorMode
+    changeColors(darkMode)
+}
+
 checkbox.addEventListener("change", ({target}) => {
     target.checked ? changeColors(darkMode) : changeColors (initialColors)
 
+    localStorage.setItem('color-mode', target.checked)
 }) 
+
+
+
+
+
 
