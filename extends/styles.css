@@ -119,13 +119,6 @@ iframe {
         height: 640px;
     }
     
-    .tableItem{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-    }
-    
     html, body {
         position:relative;
         overflow-x:hidden;
@@ -231,17 +224,8 @@ iframe {
 }
 
 @media (max-width: 500px) {
-
-    .tableItem{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-    }
-
     
     .title h1{
-        
         color: var(--color-text);
     }
     
@@ -258,13 +242,6 @@ iframe {
     
     .subSist {
         font-size: 10px;
-    }
-
-
-    .infos article{
-        
-        margin: 15px;
-        
     }
 
     iframe {
@@ -316,13 +293,6 @@ iframe {
         height: 240px;
     }
 
-    .tableItem{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-    }
-
     .groupItem{
         min-width: 330px;
         justify-content: center;
@@ -342,12 +312,6 @@ iframe {
 
 
       /* Responsive Table */
-    .tableItem{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-    }
     
     .table {
         display: block;
@@ -392,6 +356,7 @@ iframe {
     text-align: justify;
     font-size: 20px;
     color: var(--color-text);
+    
 }
 
 .title:nth-child(1){
@@ -420,7 +385,6 @@ iframe {
     margin: 20px;
     padding: 50px;
     color: var(--color-text);
-    cursor: pointer;
 }
 
 .groupItem h3{
@@ -480,62 +444,6 @@ tr:hover{
     color: var(--color-headings);
     text-align: center;
     text-decoration: none;
-}
-
-.infos{
-    max-width: 960px;
-    margin: 30px 15px 30px 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.infos article {
-    width: 360px;
-    float: left;
-    border: black solid 1px;
-    padding: 20px;
-    margin: 15px;
-}
-
-.infos h2{
-    text-align: center;
-    border: black solid 1px;
-    margin-bottom: 15px;
-    padding: 5px;
-}
-
-.infos p {
-    margin: 5px 0;
-    text-align: start;
-}
-  
-.infos ul {
-    margin-top: 0;
-}
-  
-.infos li {
-    margin: 0px 35px;
-}
-
-.divBlock {
-    display: none;
-}
-
-.showInfo {
-    min-width: 40px;    
-    border-radius: 15px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.showInfo img {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.showInfo:hover{
-    background-color: rgb(245, 195, 195);
 }
 
 .groupItem {
