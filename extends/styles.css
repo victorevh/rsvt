@@ -438,6 +438,7 @@ tr:hover{
     color: var(--color-headings);
     text-align: center;
     text-decoration: none;
+    margin: 5px;
 }
 
 .mail{
