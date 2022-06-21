@@ -225,6 +225,11 @@ iframe {
 
 @media (max-width: 500px) {
     
+    div[vw].enabled {
+        display: block;
+        margin-top: -390px;
+    }
+    
     .title h1{
         color: var(--color-text);
     }
@@ -287,6 +292,10 @@ iframe {
 }
 
 @media (max-width: 380px) {
+    div[vw].enabled {
+        display: block;
+        margin-top: -360px;
+    }
 
     iframe {
         width: 320px;
