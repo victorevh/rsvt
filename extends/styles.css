@@ -24,7 +24,7 @@ html, body {
 
 div[vw].enabled {
     display: block;
-    margin-top: -320px;
+    margin-top: -300px;
 }
 
 .corpo{
