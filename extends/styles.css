@@ -294,7 +294,7 @@ iframe {
 @media (max-width: 380px) {
     div[vw].enabled {
         display: block;
-        margin-top: -360px;
+        margin-top: -320px;
     }
 
     iframe {
